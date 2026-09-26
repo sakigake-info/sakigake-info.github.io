@@ -301,14 +301,14 @@ document.getElementById('rf').addEventListener('submit',e=>{
   const v=id=>document.getElementById(id).value.trim();
   if(!v('r-name')||!v('r-reply')){document.getElementById('r-msgout').textContent='お名前とご連絡先を入力してください。';return;}
   const body=`お名前：${v('r-name')}\nご連絡先：${v('r-reply')}\nSNS：${v('r-sns')}\n活動エリア：${v('r-area')}\n\n${v('r-msg')}`;
-  location.href='mailto:s_suzuki@siu-inc.com?subject='+encodeURIComponent('【魁】演者への応募・相談')+'&body='+encodeURIComponent(body);
+  location.href='mailto:info@siu-inc.com?subject='+encodeURIComponent('【魁】演者への応募・相談')+'&body='+encodeURIComponent(body);
 });
 document.getElementById('f').addEventListener('submit',e=>{
   e.preventDefault();
   const v=id=>document.getElementById(id).value.trim();
   if(!v('name')||!v('reply')||!v('msg')){document.getElementById('fmsg').textContent='お名前・ご連絡先・内容を入力してください。';return;}
   const body=`ご用件：${v('kind')}\n店舗名・会社名：${v('org')}\nお名前：${v('name')}\nご連絡先：${v('reply')}\n\n${v('msg')}`;
-  location.href='mailto:s_suzuki@siu-inc.com?subject='+encodeURIComponent('【魁】'+v('kind'))+'&body='+encodeURIComponent(body);
+  location.href='mailto:info@siu-inc.com?subject='+encodeURIComponent('【魁】'+v('kind'))+'&body='+encodeURIComponent(body);
   document.getElementById('fmsg').textContent='メールアプリが開かない場合は、お手数ですが時間をおいて再度お試しください。';
 });
 </script>
