@@ -3,274 +3,380 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>魁 SAKIGAKE｜パチンコ・パチスロ演者のキャスティング</title>
-<meta name="description" content="来店実戦・取材・動画出演。パチンコ・パチスロ演者のキャスティングとPRを行う魁（SAKIGAKE）の公式サイトです。">
-<meta property="og:title" content="魁 SAKIGAKE">
-<meta property="og:description" content="打つ姿で、呼ぶ。パチンコ・パチスロ演者のキャスティング。">
+<title>花吹雪 HANAFUBUKI｜パチンコ・パチスロ演者のキャスティング</title>
+<meta name="description" content="来店実戦・取材・動画出演。パチンコ・パチスロ演者のキャスティングとPRを行う花吹雪（HANAFUBUKI）の公式サイトです。">
+<meta name="theme-color" content="#FBF7F3">
+<meta property="og:title" content="花吹雪 HANAFUBUKI｜演者キャスティング">
+<meta property="og:description" content="稼働を、満開に。パチンコ・パチスロ演者のキャスティング。">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%230B0B0C'/%3E%3Ctext x='12' y='15.5' font-size='12' text-anchor='middle' fill='%23fff' font-family='sans-serif'%3E%E9%AD%81%3C/text%3E%3Crect x='6.5' y='18' width='11' height='1.6' fill='%230E7C86'/%3E%3C/svg%3E">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%231D1A1E'/%3E%3Cpath d='M12 4c3 3 3 6 0 9-3-3-3-6 0-9z' fill='%23F6D9DF'/%3E%3Cpath d='M12 13c3-1 6 0 7 3-3 1-6 0-7-3z' fill='%23C2214A'/%3E%3Cpath d='M12 13c-3-1-6 0-7 3 3 1 6 0 7-3z' fill='%23F6D9DF'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap">
 <style>
 :root{
-  --bg:#F3F8F8; --card:#FFFFFF; --ink:#1A1A1C; --muted:#52585C; --line:#DCE6E6;
-  --red:#0E7C86; --red2:#EE6045; --gold:#EE6045; --soft:#E0EFEF; --onred:#FFFFFF;
-  --disp:"Dela Gothic One","Hiragino Kaku Gothic StdN","Yu Gothic",sans-serif;
+  color-scheme:light;
+  --bg:#FBF7F3; --paper:#FFFFFF; --ink:#1D1A1E; --muted:#5E5860; --line:#E7DED8;
+  --beni:#C2214A; --beni-d:#A51B3E; --sakura:#F6D9DF; --sakura-d:#EDBFC9;
+  --mincho:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;
   --body:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;
   --mono:"DM Mono",ui-monospace,Menlo,monospace;
+  --shadow:rgba(0,0,0,.02) 0 0 0 1px, rgba(0,0,0,.04) 0 2px 6px, rgba(0,0,0,.1) 0 4px 8px;
 }
-:root{color-scheme:light}
-
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.75;padding-inline:16px}
-h1,h2,h3{text-wrap:balance;margin:0;line-height:1.25}
-p{margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7;-webkit-text-size-adjust:100%}
+h1,h2,h3{margin:0;font-family:var(--mincho);font-weight:800;line-height:1.3;text-wrap:balance}
+p{margin:0;text-wrap:pretty;word-break:auto-phrase}
 a{color:inherit}
-.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
-.note{font-size:13px;color:var(--muted)}
-:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+:focus-visible{outline:2px solid var(--beni);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:16px}
+@media (min-width:600px){.wrap{padding-inline:clamp(16px,4vw,40px)}}
+.skip{position:absolute;left:8px;top:-60px;z-index:50;background:var(--ink);color:#fff;padding:12px 16px;border-radius:6px;text-decoration:none}.skip:focus{top:8px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.muted{color:var(--muted)}
 
-.row.done{opacity:.45}
-.row.next{background:color-mix(in srgb,var(--red) 5%,#fff);box-shadow:inset 3px 0 0 var(--red)}
-.cc.soon .ph{background:var(--soft);color:#9A9AA0;font-family:var(--disp);font-size:clamp(16px,2vw,20px);letter-spacing:.06em}
-.cc.soon .ph .no{background:var(--card);color:var(--muted);border:1px solid var(--line)}
-.site{padding-inline:clamp(16px,4vw,40px)}
+/* header */
+.hd{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hd .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:68px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;min-height:44px}
+.logo svg{width:28px;height:28px;flex:none}
+.logo .jp{font-family:var(--mincho);font-weight:800;font-size:26px;letter-spacing:.08em;line-height:1}
+.logo .en{font-family:var(--mono);font-size:12px;letter-spacing:.18em;color:var(--muted);padding-left:10px;border-left:1px solid var(--ink);line-height:1.2}
+.hd nav{display:flex;align-items:center;gap:2px;font-size:14px;font-weight:500}
+.hd nav a{text-decoration:none;padding:0 12px;min-height:44px;display:inline-flex;align-items:center;border-radius:999px}
+.hd nav a:hover{background:var(--sakura)}
+.hd nav a[aria-current="true"]{text-decoration:underline;text-underline-offset:6px;text-decoration-color:var(--beni)}
+.hd nav a.cta{background:var(--beni);color:#fff;padding:0 20px;margin-left:8px;font-weight:700}
+.hd nav a.cta:hover{background:var(--beni-d)}
+.mnav{display:none;position:relative}
+.mnav summary{list-style:none;cursor:pointer;min-height:44px;display:flex;align-items:center;padding:0 14px;border:1.5px solid var(--ink);border-radius:999px;font-weight:700;font-size:14px}
+.mnav summary::-webkit-details-marker{display:none}
+.mnav .menu{position:absolute;right:0;top:52px;background:var(--paper);border:1.5px solid var(--ink);border-radius:6px;padding:8px;display:grid;min-width:200px}
+.mnav .menu a{min-height:48px;display:flex;align-items:center;padding:0 12px;text-decoration:none;font-weight:500}
+@media (max-width:760px){.hd nav .lk{display:none}.logo .en{display:none}.mnav{display:block}}
 
-.s-nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding-block:18px;border-bottom:1px solid var(--line)}
-.s-nav .mark{height:46px;color:var(--ink)}
-.s-nav .mark svg{height:100%;width:auto}
-.s-nav nav{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:14px;font-weight:500}
-.s-nav nav a{text-decoration:none}
-.s-nav nav a:hover{color:var(--red)}
-.s-nav nav a.cta{background:var(--red);color:var(--onred);padding:4px 12px;border-radius:999px}
-.s-nav nav a.cta:hover{color:var(--onred);filter:brightness(1.08)}
-
-.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding-block:44px 36px}
-.hero h2{font-family:var(--disp);font-weight:400;font-size:clamp(38px,7vw,76px);line-height:1.08;letter-spacing:.01em}
-.hero h2 em{font-style:normal;color:var(--red)}
-.hero p{margin-top:16px;max-width:36ch;color:var(--muted)}
-.hero .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
-.btn{display:inline-block;text-decoration:none;font-weight:700;font-size:14px;padding:10px 18px;border-radius:999px;border:2px solid var(--ink)}
-.btn.primary{background:var(--red);border-color:var(--red);color:#fff}
-.reels{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;background:var(--ink);padding:14px;border-radius:16px}
-.reel{background:var(--card);border-radius:10px;aspect-ratio:3/4;display:grid;grid-template-rows:1fr 1.4fr 1fr;overflow:hidden;text-align:center}
-.reel div{display:grid;place-items:center;font-family:var(--disp);color:var(--muted);opacity:.45;font-size:clamp(16px,2.4vw,22px)}
-.reel div.hit{opacity:1;color:var(--ink);font-size:clamp(28px,5vw,48px);border-block:2px solid var(--red)}
-.reel.gold div.hit{color:var(--red)}
-.reel-cap{grid-column:1/-1;font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:#F5F5F3;display:flex;justify-content:space-between;opacity:.85}
-.lamp{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--red);margin-right:6px;box-shadow:0 0 0 3px color-mix(in srgb,var(--red) 30%,transparent)}
-@media (prefers-reduced-motion:no-preference){.lamp{animation:blink 1.6s steps(2,end) infinite}}
-@keyframes blink{50%{opacity:.35}}
-
-.block{padding-block:40px;border-top:1px solid var(--line)}
-.bhead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:10px;margin-bottom:20px}
-.bhead h3{font-family:var(--disp);font-weight:400;font-size:clamp(22px,3.2vw,30px)}
-.bhead h3 small{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--red);margin-bottom:4px}
-.bhead a{font-size:13px;color:var(--muted)}
-
-.cast{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
-.cc{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:grid;grid-template-rows:auto 1fr}
-.ph{aspect-ratio:4/5;background:var(--soft);position:relative;display:grid;place-items:center;color:var(--muted);font-size:12px}
-.ph .no{position:absolute;left:10px;top:10px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;background:var(--card);color:var(--ink);border:1px solid var(--line);padding:2px 8px;border-radius:4px}
-.ph svg{width:46%;height:auto;opacity:.5}
-.cc .in{padding:14px;display:grid;gap:8px;align-content:start}
-.cc .nm{font-family:var(--disp);font-weight:400;font-size:20px;display:flex;justify-content:space-between;align-items:baseline;gap:8px}
-.cc .nm span{font-family:var(--mono);font-size:12px;color:var(--muted)}
-.cc dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:13px}
-.cc dt{color:var(--muted)}
-.cc dd{margin:0}
-.chips{display:flex;flex-wrap:wrap;gap:6px}
-.chip{font-size:11.5px;border:1px solid var(--line);border-radius:999px;padding:1px 9px;color:var(--muted)}
-.chip.sns{border:1.5px solid var(--red);color:var(--red);font-weight:700;text-decoration:none}
-.chip.on{border-color:var(--red);color:var(--red)}
-
-.sched{display:grid;gap:0;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
-.row{display:grid;grid-template-columns:92px 64px 1fr auto;gap:14px;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line);font-size:14px}
-.row:last-child{border-bottom:0}
-.row .d{font-family:var(--mono);font-variant-numeric:tabular-nums;font-weight:500}
-.row .d small{display:block;color:var(--muted);font-size:11px}
-.kind{font-size:11.5px;font-weight:700;text-align:center;border-radius:4px;padding:2px 0;color:var(--red);background:color-mix(in srgb,var(--red) 11%,#fff)}
-.row .who{font-size:12.5px;color:var(--muted);text-align:right}
-.sample{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.08em}
-
-.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.panel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;display:grid;gap:10px;align-content:start}
-.panel h4{margin:0;font-size:17px}
-.flow{list-style:none;margin:0;padding:0;display:grid;gap:10px;counter-reset:f}
-.flow li{counter-increment:f;display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start;font-size:14px}
-.flow li::before{content:counter(f);font-family:var(--disp);width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-size:15px}
-.flow li b{display:block}
-.flow li span{color:var(--muted);font-size:13px}
-
-.prog{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center}
-.thumb{aspect-ratio:16/9;border-radius:8px;background:var(--soft);border:1px solid var(--line);display:grid;place-items:center;color:var(--muted);font-family:var(--disp);font-size:13px}
-
-form{display:grid;gap:12px}
-label{display:grid;gap:4px;font-size:13px;font-weight:500}
-input,select,textarea{font:inherit;font-size:14px;padding:9px 12px;border-radius:8px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);width:100%}
-textarea{min-height:90px;resize:vertical}
-.fbtn{justify-self:start;font:inherit;font-weight:700;font-size:14px;padding:10px 22px;border-radius:999px;border:0;background:var(--red);color:var(--onred);cursor:pointer}
-.fmsg{font-size:13px;color:var(--muted)}
-.apply summary{display:inline-block;cursor:pointer;font-weight:700;font-size:14px;padding:9px 18px;border-radius:999px;background:var(--red2);color:#fff;list-style:none}
-.apply summary::-webkit-details-marker{display:none}
-.apply[open] summary{background:var(--soft);color:var(--ink)}
-.apply form{margin-top:14px;max-width:520px}
-
-.foot{padding-block:28px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:12.5px;color:var(--muted)}
-.foot .mark{height:24px;color:var(--ink)}
-.foot .mark svg{height:100%;width:auto}
-
+/* hero */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,560px) 1fr;gap:64px;align-items:center;padding-block:64px}
+.hero .eyebrow{font-size:14px;font-weight:700;letter-spacing:.12em;display:flex;align-items:center;gap:10px}
+.hero .eyebrow::before{content:"";width:28px;height:2px;background:var(--ink)}
+.hero .lead{margin-top:24px;max-width:24em;font-size:20px;line-height:1.8;color:var(--ink)}
+.hero .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 28px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;border:1.5px solid var(--ink);background:transparent;color:var(--ink);transition:background .15s,transform .15s}
+.btn:hover{background:var(--paper)}
+.btn.beni{background:var(--beni);border-color:var(--beni);color:#fff}
+.btn.beni:hover{background:var(--beni-d);border-color:var(--beni-d)}
+.btn .ar{transition:transform .15s}.btn:hover .ar{transform:translateX(3px)}
+.tate{justify-self:center;font-family:var(--mincho);font-weight:800;writing-mode:vertical-rl;font-size:clamp(72px,10vw,136px);line-height:1.1;letter-spacing:.06em;height:max-content;padding-right:8px}
+.tate em{font-style:normal;color:var(--beni)}
+.hero h1.yoko{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 @media (max-width:760px){
-  .hero,.two{grid-template-columns:1fr}
-  .row{grid-template-columns:70px 56px 1fr;}
-  .row .who{grid-column:3;text-align:left;margin-top:-6px}
-  .prog{grid-template-columns:96px 1fr}
+  .hero .wrap{grid-template-columns:1fr;min-height:auto;padding-block:40px 48px;gap:0}
+  .tate{display:none}
+  .hero h1.yoko{position:static;width:auto;height:auto;overflow:visible;clip:auto;white-space:normal;display:block;font-size:clamp(40px,11vw,56px);line-height:1.2;margin-top:16px}
+  .hero h1.yoko em{font-style:normal;color:var(--beni)}
 }
-.hero{background:var(--card);color:var(--ink);border-radius:16px;padding:40px clamp(20px,4vw,44px);margin-top:20px;border:1px solid var(--line)}
-.hero p{color:var(--muted)}
-.hero h2 em{color:var(--red2,var(--red))}
-.hero .reels{background:var(--soft);border:1px solid var(--line)}
-.hero .reel{border:1px solid var(--line)}
-.hero .reel div.hit{color:var(--ink);border-color:var(--line)}
-.hero .reel.gold div.hit{color:var(--red2,var(--red));border-color:var(--red2,var(--red))}
-.reel-cap{color:var(--muted)!important}
-.past{margin-top:12px}
-.past summary{cursor:pointer;font-size:13px;color:var(--muted);padding-block:6px}
-.past .sched{margin-top:8px}
-.tag-now{color:var(--red);font-weight:700;margin-left:8px}
-.row .end{font-size:11px;color:var(--muted);margin-left:8px}
 
-body{margin:0}
-.site{max-width:1120px;margin:0 auto}
-a{color:inherit}
-.foot a{color:var(--muted)}
-@media (max-width:560px){
-  .cast{grid-template-columns:repeat(3,1fr);gap:8px}
-  .cast .cc:first-child{grid-column:1/-1;grid-template-columns:120px 1fr;grid-template-rows:none}
-  .cast .cc:first-child .ph{aspect-ratio:auto;height:100%}
-  .cc.soon .ph{aspect-ratio:3/4;font-size:12px;text-align:center;padding:4px}
-  .cc.soon .ph .no{font-size:9px;left:6px;top:6px;padding:1px 5px}
-  .cast .cc:first-child .nm{flex-wrap:wrap}
-  .cc.soon .in{padding:10px}
-  .cc.soon .in .note{display:none}
-  .cc.soon .nm{font-size:13px}
+/* 番付（来店実績） */
+.banzuke{display:flex;flex-direction:row-reverse;justify-content:flex-start;border-block:4px double var(--ink);overflow-x:auto;background:var(--bg)}
+.banzuke .col{writing-mode:vertical-rl;flex:1 1 auto;padding:16px 10px;border-left:1px solid var(--line);font-family:var(--mincho);font-weight:700;font-size:18px;line-height:1.2;letter-spacing:.08em;min-height:320px}
+.banzuke .col .dt{display:block;font-family:var(--body);font-weight:500;font-size:12px;color:var(--muted);letter-spacing:.04em;margin-left:4px}
+.banzuke .ttl{writing-mode:vertical-rl;flex:none;padding:16px 16px;background:var(--ink);color:#fff;font-family:var(--mincho);font-weight:800;font-size:24px;letter-spacing:.2em;display:flex;justify-content:space-between}
+.banzuke .ttl small{font-size:13px;font-weight:700;letter-spacing:.1em;color:var(--sakura)}
+.banzuke.big .col{font-size:20px;min-height:400px;padding:20px 6px}
+.banzuke.big .ttl{font-size:30px;padding:20px}
+.banzuke:focus-visible{outline:2px solid var(--beni);outline-offset:4px}
+.scroll-note{display:none;font-size:13px;color:var(--muted);margin-top:8px}
+@media (max-width:760px){.banzuke{scroll-snap-type:x mandatory}.banzuke .col,.banzuke .ttl{scroll-snap-align:end}.banzuke.big .col{flex:0 0 56px;min-height:280px;font-size:17px;padding:16px 4px}.banzuke.big .ttl{font-size:24px;padding:16px 12px}.scroll-note{display:block}}
+
+/* 花道（次回の来店帯） */
+.road{background:var(--ink);color:#fff}
+.road a{display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px;min-height:72px;padding-block:14px;text-decoration:none}
+.road .k{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--sakura)}
+.road .v{font-family:var(--mincho);font-weight:700;font-size:20px}
+.road .w{font-size:14px;color:#D9D2D5}
+.road .go{margin-left:auto;font-weight:700;font-size:14px;display:inline-flex;align-items:center;gap:8px;border-bottom:1.5px solid #fff;padding-bottom:2px}
+.road a:hover .go{color:var(--sakura);border-color:var(--sakura)}
+
+/* section */
+.sec{padding-block:96px 0}
+.sec>.wrap>h2,.h2{font-size:clamp(30px,4.4vw,44px);letter-spacing:.04em}
+.sec-head{margin-bottom:40px}
+.sec-head .lede{font-family:var(--mincho);font-weight:700;font-size:clamp(20px,2.4vw,28px);line-height:1.6;color:var(--ink);max-width:none}
+.sec-head p{max-width:34em;margin-top:16px}
+@media (max-width:760px){.sec{padding-block:64px 0}.sec-head{margin-bottom:28px}}
+
+/* cast */
+.cast{display:grid;grid-template-columns:5fr 7fr;border-top:2px solid var(--ink);border-bottom:1px solid var(--line)}
+.cast .num{background:var(--ink);color:#fff;padding:32px;display:flex;flex-direction:column;justify-content:space-between;min-height:360px;position:relative;overflow:hidden}
+.cast .num .no{font-family:var(--mincho);font-weight:700;font-size:15px;letter-spacing:.2em}
+.cast .num .vname{writing-mode:vertical-rl;font-family:var(--mincho);font-weight:800;font-size:clamp(88px,10vw,128px);line-height:1;letter-spacing:.08em;align-self:flex-end;margin:8px 0}
+.cast .num .cap{font-size:14px;color:#D9D2D5}
+.cast .num .cap b{display:block;color:#fff;font-family:var(--mincho);font-size:18px;margin-top:4px}
+.cast .prof{padding:32px 32px 32px 40px;display:grid;gap:16px;align-content:center}
+.cast .role{font-size:14px;font-weight:700;letter-spacing:.08em;color:var(--muted)}
+.cast .name{font-size:clamp(36px,4.6vw,52px);letter-spacing:.06em}
+.cast .handle{font-family:var(--mono);font-size:14px;color:var(--muted)}
+.cast dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 24px;font-size:15px}
+.cast dt{color:var(--muted)}
+.cast dd{margin:0}
+.links{display:flex;flex-wrap:wrap;gap:4px 24px;font-size:15px;font-weight:700}
+.links a{min-height:44px;min-width:44px;display:inline-flex;align-items:center;gap:6px;text-decoration:none;border-bottom:1.5px solid var(--ink)}
+.links a:hover{color:var(--beni);border-color:var(--beni)}
+.links span{min-height:44px;display:inline-flex;align-items:center;color:var(--muted);font-weight:500}
+.slots{display:grid;grid-template-columns:repeat(3,1fr)}
+.slot{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:88px;padding:0 24px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);text-decoration:none;transition:background .15s}
+.slot:last-child{border-right:0}
+.slot:hover{background:var(--sakura)}
+.slot .n{font-family:var(--mincho);font-weight:700;font-size:15px;letter-spacing:.16em;color:var(--muted)}
+.slot .t{font-family:var(--mincho);font-weight:800;font-size:22px}
+.slot .ar{font-weight:700}
+@media (max-width:760px){
+  .cast{grid-template-columns:1fr}
+  .cast .num{min-height:0;gap:12px;padding:24px 20px}
+  .cast .num .no{width:100%}
+  .cast .num .vname{writing-mode:horizontal-tb;font-size:56px;align-self:auto;margin:0}
+  .cast .prof .name{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .cast .prof{padding:24px 4px}
+  .slots{grid-template-columns:1fr}
+  .slot{border-right:0;min-height:64px;padding:0 4px}
+}
+
+/* schedule */
+.next{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;padding:28px 0;border-top:2px solid var(--ink);border-bottom:1px solid var(--line)}
+.next b{font-family:var(--mincho);font-weight:800;font-size:24px}
+.next a{font-weight:700;color:var(--beni);text-decoration:none;min-height:44px;display:inline-flex;align-items:center;border-bottom:1.5px solid var(--beni)}
+.up{list-style:none;margin:0;padding:0}
+.up li{display:grid;grid-template-columns:120px 1fr auto;gap:16px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--line)}
+.up .d{font-family:var(--mono);font-size:15px}
+.up .h{font-family:var(--mincho);font-weight:700;font-size:20px}
+.tag{font-size:12px;font-weight:700;color:#fff;background:var(--ink);border-radius:6px;padding:1px 8px;margin-left:10px;vertical-align:3px;font-family:var(--body)}
+@media (max-width:760px){.up li{grid-template-columns:1fr;gap:2px}}
+
+/* flow */
+.flow{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.flow{display:grid;grid-template-columns:1fr 1fr;column-gap:48px}
+.flow li{display:grid;grid-template-columns:80px 1fr;gap:4px 16px;align-items:start;padding:24px 0;border-bottom:1px solid var(--line)}
+.flow .k{grid-row:span 2}
+.flow .k{font-family:var(--mincho);font-weight:800;font-size:48px;line-height:1}
+.flow b{font-size:18px}
+.flow span{font-size:15px;color:var(--muted)}
+.flow-cta{margin-top:40px;display:flex;flex-wrap:wrap;align-items:center;gap:16px}
+@media (max-width:760px){.flow{grid-template-columns:1fr}.flow li{grid-template-columns:56px 1fr}.flow .k{font-size:36px}}
+
+
+/* recruit */
+.recruit{background:var(--sakura);margin-top:96px;padding-block:96px;position:relative;overflow:hidden}
+.recruit .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.recruit h2{font-size:clamp(28px,3.6vw,44px);line-height:1.4}
+.recruit .txt{margin-top:24px;font-size:16px}
+.recruit ul{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:10px;font-weight:700}
+.recruit li{display:flex;gap:12px;align-items:baseline}
+.recruit li::before{content:"";flex:none;width:10px;height:7px;border-radius:10px 0 10px 0;background:var(--ink);transform:translateY(-2px)}
+.recruit .sub{margin-top:24px;font-size:14px;color:var(--muted)}
+@media (max-width:760px){.recruit{margin-top:64px;padding-block:64px}.recruit .wrap{grid-template-columns:1fr;gap:32px}}
+
+/* forms */
+.formbox{border-top:2px solid var(--ink);padding-top:24px}
+.formbox h3{font-size:20px;margin-bottom:16px}
+form{display:grid;gap:16px}
+label{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 0;font-size:14px;font-weight:700}
+label>input,label>textarea{flex-basis:100%;margin-top:4px}
+.req{color:var(--ink);font-size:12px;margin-left:8px;border:1px solid var(--ink);border-radius:6px;padding:0 6px;line-height:1.6}
+input,textarea{font:inherit;font-size:16px;font-weight:400;min-height:48px;padding:10px 14px;border-radius:6px;border:1.5px solid #8F8489;background:var(--paper);color:var(--ink);width:100%}
+input:focus,textarea:focus{outline:none;border-color:var(--ink);background:#fff;box-shadow:0 0 0 3px var(--sakura)}
+input[aria-invalid="true"],textarea[aria-invalid="true"]{border-color:var(--beni)}
+textarea{min-height:110px;resize:vertical}
+.fbtn{justify-self:start;font:inherit;font-weight:700;font-size:15px;min-height:52px;padding:0 32px;border-radius:999px;border:1.5px solid var(--ink);background:var(--ink);color:#fff;cursor:pointer}
+.fbtn:hover{background:#3A353B}
+.fbtn.beni{background:var(--beni);border-color:var(--beni)}
+.fbtn.beni:hover{background:var(--beni-d)}
+.fmsg{font-size:14px;color:var(--muted)}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg button{font:inherit;font-size:14px;font-weight:700;min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid #8F8489;background:transparent;color:var(--ink);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.mailalt{font-size:14px}
+.mailalt summary{cursor:pointer;min-height:44px;display:flex;align-items:center;gap:8px;width:max-content;list-style:none;text-decoration:underline;text-underline-offset:4px}
+.mailalt summary::-webkit-details-marker{display:none}
+.mailalt summary::before{content:"+";font-family:var(--mono);font-weight:700}
+.mailalt[open] summary::before{content:"−"}
+.mailalt .addr{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:4px 0 6px}
+.mailalt code{font-family:var(--mono);font-size:15px;border:1px solid var(--line);border-radius:6px;padding:8px 16px;background:var(--bg)}
+.mailalt button{font:inherit;font-size:14px;font-weight:700;min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid var(--ink);background:#fff;cursor:pointer}
+@media (min-width:761px){#rf{grid-template-columns:1fr 1fr;column-gap:16px}#rf>label:nth-of-type(n+5),#rf>.fbtn,#rf>.fmsg,#rf>.mailalt{grid-column:1/-1}}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr;gap:32px}
+.contact form{max-width:880px}
+.contact .side p{margin-top:16px}
+.contact form{border-top:2px solid var(--ink);padding-top:28px}
+@media (min-width:761px){#f{grid-template-columns:1fr 1fr;column-gap:16px}#f>div,#f>label:nth-of-type(1),#f>label:nth-of-type(n+4),#f>.fbtn,#f>.fmsg,#f>.mailalt{grid-column:1/-1}}
+@media (max-width:760px){.contact{grid-template-columns:1fr;gap:28px}}
+
+/* footer */
+.ft{margin-top:120px;border-top:1px solid var(--line);padding-block:40px 48px}
+.ft .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:20px 32px;align-items:center;font-size:14px;color:var(--muted)}
+.ft nav{display:flex;flex-wrap:wrap;gap:0 18px}
+.ft nav a{min-height:44px;min-width:44px;display:inline-flex;align-items:center;text-decoration:none}
+.ft nav a:hover{color:var(--ink)}
+@media (max-width:760px){.ft .wrap{grid-template-columns:1fr}.ft{margin-top:80px}}
+
+@media (prefers-reduced-motion:reduce){.mcta,.btn .ar{transition:none!important}}
+/* mobile bottom CTA */
+.mcta{display:none}
+@media (max-width:760px){
+  .mcta{display:flex;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:30;gap:8px;transform:translateY(140%);transition:transform .3s ease}
+  .mcta.show{transform:none}
+  .mcta a{flex:1;text-align:center;text-decoration:none;font-weight:700;font-size:15px;min-height:52px;display:flex;align-items:center;justify-content:center;border-radius:999px;box-shadow:var(--shadow)}
+  .mcta .a1{background:var(--beni);color:#fff}
+  .mcta .a2{background:var(--paper);color:var(--ink);border:1.5px solid var(--ink)}
+  body{padding-bottom:84px}
 }
 </style>
 </head>
 <body>
-<div class="site">
+<a class="skip" href="#cast">本文へ移動</a>
+<script>document.documentElement.classList.add('js')</script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="mark" viewBox="0 0 32 32"><path d="M16 2c5 4 5 9 0 13-5-4-5-9 0-13z" fill="#1D1A1E"/><path d="M16 15c5-2 10 0 12 5-5 2-10 0-12-5z" fill="#C2214A"/><path d="M16 15c-5-2-10 0-12 5 5 2 10 0 12-5z" fill="#1D1A1E"/><path d="M16 15c2 5 1 10-3 14-2-5-1-10 3-14z" fill="#EDBFC9"/><path d="M16 15c-2 5-1 10 3 14 2-5 1-10-3-14z" fill="#1D1A1E" opacity=".85"/></symbol></defs></svg>
 
+<header class="hd">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="花吹雪 HANAFUBUKI トップへ"><svg aria-hidden="true"><use href="#mark"/></svg><span class="jp" aria-hidden="true">花吹雪</span><span class="en" aria-hidden="true">HANAFUBUKI</span></a>
+    <nav aria-label="サイト内">
+      <a class="lk" href="#cast">演者</a><a class="lk" href="#schedule">来店実績</a><a class="lk" href="#hall">ホールの方へ</a><a class="lk" href="#recruit">演者募集</a><details class="mnav"><summary>メニュー</summary><div class="menu"><a href="#cast">演者</a><a href="#schedule">来店実績</a><a href="#hall">ホールの方へ</a><a href="#recruit">演者募集</a></div></details><a class="cta" href="#contact" data-kind="来店のご依頼">来店依頼</a>
+    </nav>
+  </div>
+</header>
 
-    <div class="s-nav">
-      <div class="mark"><svg viewBox="0 0 200 100" aria-label="魁 SAKIGAKE"><text x="0" y="80" font-family="Dela Gothic One, sans-serif" font-size="78" fill="currentColor">魁</text><rect x="86" y="24" width="3.5" height="60" fill="var(--red)"/><text x="100" y="62" font-family="DM Mono, monospace" font-size="17" letter-spacing="3" fill="currentColor">SAKIGAKE</text></svg></div>
-      <nav aria-label="サイト内">
-        <a href="#cast">演者</a><a href="#schedule">スケジュール</a><a href="#program">番組・企画</a><a href="#recruit">求人</a><a class="cta" href="#contact">来店依頼</a>
-      </nav>
-    </div>
-
-    <section class="hero">
+<main id="top">
+  <section class="hero" aria-labelledby="h-hero">
+    <canvas id="petals" aria-hidden="true"></canvas>
+    <div class="wrap">
       <div>
-        <p class="eyebrow"><span class="lamp"></span>パチンコ・パチスロ演者のキャスティング</p>
-        <h2>打つ姿で、<br><em>呼ぶ。</em></h2>
-        <p>来店実戦・取材・動画出演。ホールの告知に立てる演者を、手配から当日の運営までまとめて担当します。</p>
-        <div class="btns"><a class="btn primary" href="#cast">演者を見る</a><a class="btn" href="#contact">来店を依頼する</a></div>
+        <p class="eyebrow">パチンコ・パチスロ演者のキャスティング</p>
+        <h1 class="yoko" id="h-hero">稼働を、<br><em>満開に。</em></h1>
+        <p class="lead">演者の手配から、告知素材、当日の実戦、終わった後の報告まで。来店の仕事を、まるごと預かります。</p>
+        <div class="btns"><a class="btn beni" href="#contact" data-kind="来店のご依頼">来店を依頼する <span class="ar" aria-hidden="true">→</span></a><a class="btn" href="#cast">演者を見る</a></div>
       </div>
-      <div class="reels" aria-hidden="true">
-        <div class="reel"><div>来店</div><div class="hit">魁</div><div>取材</div></div>
-        <div class="reel"><div>収録</div><div class="hit">魁</div><div>実戦</div></div>
-        <div class="reel gold"><div>告知</div><div class="hit">魁</div><div>配信</div></div>
+      <p class="tate" aria-hidden="true">稼働を、<br><em>満開に。</em></p>
+    </div>
+  </section>
+
+  <div class="road">
+    <div class="wrap">
+      <a href="#schedule" id="road"><span class="k" id="rd-k">NEXT</span><span class="v" id="rd-v">—</span><span class="w" id="rd-w"></span><span class="go">来店実績を見る <span aria-hidden="true">→</span></span></a>
+    </div>
+  </div>
+
+  <section class="sec" id="cast" aria-labelledby="h-cast">
+    <div class="wrap">
+      <div class="sec-head"><h2 class="h2" id="h-cast">演者</h2></div>
+      <article class="cast">
+        <div class="num" aria-hidden="true">
+          <p class="no">其の一</p>
+          <p class="vname">苺ゆい</p>
+        </div>
+        <div class="prof">
+          <p class="role">クリエイター兼パチスロ演者</p>
+          <h3 class="name">苺ゆい</h3>
+          <p class="handle">@strawberry_yui_</p>
+          <dl><dt>活動エリア</dt><dd>関東近郊</dd><dt>出演</dt><dd>来店・YouTube</dd><dt>X</dt><dd>3.3万フォロワー</dd></dl>
+          <div class="links"><a href="https://x.com/strawberry_yui_" target="_blank" rel="noopener">X <span aria-hidden="true">↗</span></a><a href="https://www.instagram.com/ichi5yuichan/" target="_blank" rel="noopener">Instagram <span aria-hidden="true">↗</span></a><span>YouTube（準備中）</span></div>
+        </div>
+      </article>
+      <div class="slots">
+        <a class="slot" href="#recruit" aria-label="其の二 募集中。演者募集を見る"><span class="n">其の二</span><span class="t">募集中</span><span class="ar" aria-hidden="true">→</span></a>
+        <a class="slot" href="#recruit" aria-label="其の三 募集中。演者募集を見る"><span class="n">其の三</span><span class="t">募集中</span><span class="ar" aria-hidden="true">→</span></a>
+        <a class="slot" href="#recruit" aria-label="其の四 募集中。演者募集を見る"><span class="n">其の四</span><span class="t">募集中</span><span class="ar" aria-hidden="true">→</span></a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="block" id="cast">
-      <div class="bhead"><h3><small>CAST</small>演者</h3></div>
-      <div class="cast">
-        <article class="cc">
-          <div class="ph"><span class="no">CAST 01</span><svg viewBox="0 0 40 40"><circle cx="20" cy="14" r="8" fill="currentColor"/><path d="M4 38c0-9 7-15 16-15s16 6 16 15z" fill="currentColor"/></svg></div>
-          <div class="in">
-            <div class="nm">苺ゆい<span>@strawberry_yui_</span></div>
-            <dl><dt>肩書</dt><dd>クリエイター兼パチスロ演者</dd><dt>活動エリア</dt><dd>関東近郊</dd><dt>出演</dt><dd>来店・YouTube</dd><dt>X</dt><dd>3.3万フォロワー</dd><dt>来店受付</dt><dd>—</dd></dl>
-            <div class="chips"><a class="chip sns" href="https://x.com/strawberry_yui_">X</a><span class="chip sns">YouTube</span><a class="chip sns" href="https://www.instagram.com/ichi5yuichan/">Instagram</a></div>
-          </div>
-        </article>
-        <article class="cc soon"><div class="ph"><span class="no">CAST 02</span>COMING SOON</div><div class="in"><div class="nm">近日公開</div><p class="note">新しい演者を準備中です。</p></div></article>
-        <article class="cc soon"><div class="ph"><span class="no">CAST 03</span>COMING SOON</div><div class="in"><div class="nm">近日公開</div><p class="note">新しい演者を準備中です。</p></div></article>
-        <article class="cc soon"><div class="ph"><span class="no">CAST 04</span>COMING SOON</div><div class="in"><div class="nm">近日公開</div><p class="note">新しい演者を準備中です。</p></div></article>
-      </div>
-    </section>
+  <section class="sec" id="schedule" aria-labelledby="h-sched">
+    <div class="wrap">
+      <div class="sec-head"><h2 class="h2" id="h-sched">来店実績</h2><p class="muted" id="sched-sub"></p></div>
+      <div id="up"></div>
+      <div class="banzuke big" id="bz" role="region" aria-label="来店番付" tabindex="0"></div>
+      <p class="scroll-note">← 左へスワイプすると、過去の来店が見られます</p>
+    </div>
+  </section>
 
-    <section class="block" id="schedule">
-      <div class="bhead"><h3><small>SCHEDULE</small>スケジュール</h3><span class="sample" id="sched-today"></span></div>
-      <div class="sched" id="sched-up"></div>
-      <details class="past" id="sched-past-wrap"><summary id="sched-past-sum">終了した来店</summary><div class="sched" id="sched-past"></div></details>
-    </section>
-
-    <section class="block" id="program">
-      <div class="bhead"><h3><small>PROGRAM</small>番組・企画</h3></div>
-      <div class="two">
-        <div class="panel prog"><div class="thumb">YouTube</div><div><h4>実戦番組</h4><p class="note">準備中です。公開したらここでお知らせします。</p></div></div>
-        <div class="panel prog"><div class="thumb">SHORTS</div><div><h4>来店の切り抜き</h4><p class="note">準備中です。</p></div></div>
-      </div>
-    </section>
-
-    <section class="block" id="hall">
-      <div class="bhead"><h3><small>FOR HALLS</small>来店依頼の流れ</h3></div>
+  <section class="sec" id="hall" aria-labelledby="h-hall">
+    <div class="wrap">
+      <div class="sec-head"><h2 class="h2" id="h-hall">来店依頼の流れ</h2><p class="muted">日程・エリア・機種が決まっていなくても大丈夫です。候補日だけでもお送りください。</p></div>
       <ol class="flow">
-        <li><div><b>ご相談</b><span>日程・エリア・機種・ご予算をフォームで送信</span></div></li>
-        <li><div><b>演者のご提案</b><span>客層と機種に合う演者を選び、候補日をお返しします</span></div></li>
-        <li><div><b>告知素材のお渡し</b><span>演者写真・告知文・SNS投稿文をセットで用意</span></div></li>
-        <li><div><b>当日の実戦と報告</b><span>稼働の記録を残し、終了後にご報告</span></div></li>
+        <li><span class="k" aria-hidden="true">壱</span><b>ご相談</b><span>日程・エリア・機種・ご予算をフォームで送信</span></li>
+        <li><span class="k" aria-hidden="true">弐</span><b>演者のご提案</b><span>客層と機種に合う演者を選び、候補日をお返しします</span></li>
+        <li><span class="k" aria-hidden="true">参</span><b>告知素材のお渡し</b><span>演者写真・告知文・SNS投稿文をセットで用意</span></li>
+        <li><span class="k" aria-hidden="true">肆</span><b>当日の実戦と報告</b><span>稼働の記録を残し、終了後にご報告</span></li>
       </ol>
-    </section>
+      <div class="flow-cta"><a class="btn beni" href="#contact" data-kind="来店のご依頼">来店を相談する <span class="ar" aria-hidden="true">→</span></a></div>
+    </div>
+  </section>
 
-    <section class="block" id="recruit">
-      <div class="bhead"><h3><small>RECRUIT</small>求人</h3></div>
-      <div class="panel">
-        <h4>演者募集</h4>
-        <p class="note">来店・動画に出演できる方。未経験可、関東近郊で活動できる方。</p>
-        <p class="note"><b style="color:var(--red2)">来店の予定が埋まっていない演者さんも募集中です。</b>魁独自のホールとのつながりで、来店案件をご紹介します。まずはお気軽にご相談ください。</p>
-        <details class="apply"><summary>応募・相談フォームを開く</summary>
-          <form id="rf">
-            <label for="r-name">お名前（活動名）<input id="r-name" required></label>
-            <label for="r-reply">ご連絡先（メールまたは電話）<input id="r-reply" required></label>
-            <label for="r-sns">SNS（XのIDなど）<input id="r-sns" placeholder="@"></label>
-            <label for="r-area">活動エリア<input id="r-area" placeholder="例：東京・神奈川"></label>
-            <label for="r-msg">ひとこと<textarea id="r-msg" placeholder="来店の経験、空いている曜日など"></textarea></label>
-            <button class="fbtn" type="submit">メールを作成する</button>
-            <p class="fmsg" id="r-msgout" aria-live="polite">送信ボタンを押すと、入力内容が入った状態でメールアプリが開きます。</p>
-          </form>
-        </details>
+  <section class="recruit" id="recruit" aria-labelledby="h-rec">
+    <div class="wrap">
+      <div>
+        <h2 id="h-rec">指名は、<br>実力で取りにいく。</h2>
+        <p class="txt">来店の予定が埋まっていない演者さんも募集中です。花吹雪独自のホールとのつながりで、来店案件をご紹介します。まずはお気軽にご相談ください。</p>
+        <ul><li>来店・動画に出演できる方</li><li>未経験可</li><li>関東近郊で活動できる方</li></ul>
+        <p class="sub">募集主：株式会社Siu　条件は応募後にご案内します。</p>
       </div>
-      <p class="note" style="margin-top:12px">募集主：株式会社Siu　条件は応募後にご案内します。</p>
-    </section>
-
-    <section class="block" id="contact">
-      <div class="bhead"><h3><small>CONTACT</small>お問い合わせ</h3></div>
-      <div class="two">
-        <form id="f">
-          <label for="kind">ご用件<select id="kind"><option>来店のご依頼</option><option>取材・出演のご依頼</option><option>演者への応募</option><option>その他</option></select></label>
-          <label for="org">店舗名・会社名<input id="org" placeholder="〇〇ホール △△店"></label>
-          <label for="name">お名前<input id="name" required></label>
-          <label for="reply">ご連絡先（メールまたは電話）<input id="reply" required></label>
-          <label for="msg">内容<textarea id="msg" required placeholder="候補日・エリア・機種など、決まっている範囲でどうぞ"></textarea></label>
-          <button class="fbtn" type="submit">メールを作成する</button>
-          <p class="fmsg" id="fmsg" aria-live="polite">送信ボタンを押すと、入力内容が入った状態でメールアプリが開きます。</p>
+      <div class="formbox">
+        <h3>応募・相談フォーム</h3>
+        <form id="rf" novalidate>
+          <label for="r-name">お名前（活動名）<span class="req">必須</span><input id="r-name" autocomplete="nickname" required></label>
+          <label for="r-reply">ご連絡先<span class="req">必須</span><input id="r-reply" autocomplete="email" placeholder="メールまたは電話" required></label>
+          <label for="r-sns">SNS（XのIDなど）<input id="r-sns" placeholder="@"></label>
+          <label for="r-area">活動エリア<input id="r-area" placeholder="例：東京・神奈川"></label>
+          <label for="r-msg">ひとこと<textarea id="r-msg" placeholder="来店の経験、空いている曜日など"></textarea></label>
+          <button class="fbtn" type="submit">応募メールを作成する</button>
+          <p class="fmsg" id="r-out" aria-live="polite">送信ボタンを押すと、メールアプリが開きます。</p>
+          <details class="mailalt"><summary>メールアプリが開かないとき</summary><div class="addr"><code id="addr2">info@siu-inc.com</code><button type="button" class="copybtn" data-t="addr2">コピー</button><span aria-live="polite"></span></div><p>このアドレスに、上の内容をお送りください。</p></details>
         </form>
-        <div class="panel" id="about"><h4>ご依頼の前に</h4><p class="note">日程・エリア・機種が決まっていなくても大丈夫です。候補日だけでもお送りください。</p><p class="note">お送りいただいた情報の扱いは<a href="privacy.html">プライバシーポリシー</a>に記載しています。</p></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <footer class="foot">
-      <div class="mark"><svg viewBox="0 0 200 100" aria-label="魁 SAKIGAKE"><text x="0" y="80" font-family="Dela Gothic One, sans-serif" font-size="78" fill="currentColor">魁</text><rect x="86" y="24" width="3.5" height="60" fill="var(--red)"/><text x="100" y="62" font-family="DM Mono, monospace" font-size="17" letter-spacing="3" fill="currentColor">SAKIGAKE</text></svg></div>
-      <span><a href="https://x.com/_sakigake_info">X（@_sakigake_info）</a>　<a href="privacy.html">プライバシーポリシー</a></span>
-      <span>© SAKIGAKE</span>
-    </footer>
+  <section class="sec" id="contact" aria-labelledby="h-con">
+    <div class="wrap contact">
+      <div class="side">
+        <h2 class="h2" id="h-con">お問い合わせ</h2>
+        <p class="muted">来店のご依頼、取材・出演のご相談はこちらから。お送りいただいた情報の扱いは<a href="privacy.html">プライバシーポリシー</a>に記載しています。</p>
+      </div>
+      <form id="f" novalidate>
+        <div><p style="font-size:14px;font-weight:700;margin-bottom:8px">ご用件</p>
+          <div class="seg" id="seg" role="group" aria-label="ご用件"><button type="button" aria-pressed="true">来店のご依頼</button><button type="button" aria-pressed="false">取材・出演のご依頼</button><button type="button" aria-pressed="false">その他</button></div>
+        </div>
+        <label for="org">店舗名・会社名<input id="org" autocomplete="organization" placeholder="〇〇ホール △△店"></label>
+        <label for="name">お名前<span class="req">必須</span><input id="name" autocomplete="name" required></label>
+        <label for="reply">ご連絡先<span class="req">必須</span><input id="reply" autocomplete="email" placeholder="メールまたは電話" required></label>
+        <label for="msg">内容<span class="req">必須</span><textarea id="msg" required placeholder="候補日・エリア・機種など、決まっている範囲でどうぞ"></textarea></label>
+        <button class="fbtn beni" type="submit">依頼メールを作成する</button>
+        <p class="fmsg" id="f-out" aria-live="polite">送信ボタンを押すと、入力内容が入った状態でメールアプリが開きます。</p>
+        <details class="mailalt"><summary>メールアプリが開かないとき</summary><div class="addr"><code id="addr1">info@siu-inc.com</code><button type="button" class="copybtn" data-t="addr1">コピー</button><span aria-live="polite"></span></div><p>このアドレスに、上の内容をお送りください。</p></details>
+      </form>
+    </div>
+  </section>
+</main>
 
-  
-</div>
+<footer class="ft">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="花吹雪 HANAFUBUKI トップへ"><svg aria-hidden="true"><use href="#mark"/></svg><span class="jp" aria-hidden="true" style="font-size:20px">花吹雪</span></a>
+    <nav aria-label="フッター"><a href="#cast">演者</a><a href="#schedule">来店実績</a><a href="#hall">ホールの方へ</a><a href="#recruit">演者募集</a><a href="#contact">お問い合わせ</a><a href="privacy.html">プライバシーポリシー</a></nav>
+    <span>© HANAFUBUKI</span>
+  </div>
+</footer>
+
+<div class="mcta" id="mcta"><a class="a1" href="#contact" data-kind="来店のご依頼">来店を依頼</a><a class="a2" href="#recruit">演者に応募</a></div>
+
 <script>
-/* 来店データ：ここに1行ずつ足すだけ。終了／次回／本日は日付から自動判定（日本時間） */
+/* 来店データ：ここに1行ずつ足すだけ。次回／本日／実績は日本時間で自動判定 */
 const SCHEDULE=[
   ["2026-09-01","楽園蒲田","苺ゆい"],["2026-09-03","キコーナ草加","苺ゆい"],["2026-09-05","チンジャラ会館","苺ゆい"],
   ["2026-09-07","スーパーセブン新中野","苺ゆい"],["2026-09-11","キコーナ八柱","苺ゆい"],["2026-09-12","キング世田谷","苺ゆい"],
@@ -279,38 +385,97 @@ const SCHEDULE=[
   ["2026-09-25","マルハン相模原","苺ゆい"],["2026-09-26","ニューダイヤ塩山","苺ゆい"],["2026-09-27","Super D'station立川","苺ゆい"]
 ];
 (function(){
-  const W=["SUN","MON","TUE","WED","THU","FRI","SAT"];
-  const today=new Intl.DateTimeFormat("sv-SE",{timeZone:"Asia/Tokyo"}).format(new Date()); // YYYY-MM-DD
+  const $=id=>document.getElementById(id);
+  const W=["日","月","火","水","木","金","土"];
+  const today=new Intl.DateTimeFormat("sv-SE",{timeZone:"Asia/Tokyo"}).format(new Date());
   const esc=t=>t.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const md=d=>`${+d.slice(5,7)}/${+d.slice(8)}（${W[new Date(d+"T12:00:00Z").getUTCDay()]}）`;
   const rows=SCHEDULE.slice().sort((a,b)=>a[0]<b[0]?-1:1);
   const up=rows.filter(r=>r[0]>=today), past=rows.filter(r=>r[0]<today).reverse();
-  const row=(r,cls,tag)=>{const md=r[0].slice(5).replace("-",".");
-    return `<div class="row ${cls}"><div class="d">${md}<small>${W[new Date(r[0]+"T12:00:00Z").getUTCDay()]}</small></div><span class="kind">来店</span><div>${esc(r[1])}${tag}</div><div class="who">${esc(r[2])}</div></div>`;};
-  document.getElementById("sched-up").innerHTML = up.length
-    ? up.map((r,i)=>row(r,i===0?"next":"", r[0]===today?'<span class="tag-now">本日</span>':(i===0?'<span class="tag-now">次回</span>':''))).join("")
-    : '<div class="row"><div class="note" style="grid-column:1/-1">次の来店は近日公開</div></div>';
-  document.getElementById("sched-past").innerHTML = past.map(r=>row(r,"done",'<span class="end">終了</span>')).join("");
-  document.getElementById("sched-past-sum").textContent = `終了した来店（${past.length}件）`;
-  document.getElementById("sched-past-wrap").hidden = past.length===0;
-  document.getElementById("sched-today").textContent = today.replace(/-/g,".")+" 時点";
+  const kan=n=>{const d="〇一二三四五六七八九";if(n<=10)return n===10?"十":d[n];if(n<20)return "十"+(n%10?d[n%10]:"");return d[(n/10)|0]+"十"+(n%10?d[n%10]:"");};
+  const jd=d=>`${kan(+d.slice(5,7))}月${kan(+d.slice(8))}日`;
+  const reiwa=y=>`令和${kan(y-2018)}年`;
+  const mon=+today.slice(5,7);
+  // 今後の予定（あるときだけ表）
+  $("up").innerHTML = up.length
+    ? '<ul class="up" style="border-top:2px solid var(--ink);margin-bottom:48px">'+up.map((r,i)=>`<li><span class="d">${md(r[0])}</span><span class="h">${esc(r[1])}${r[0]===today?'<span class="tag">本日</span>':(i===0?'<span class="tag">次回</span>':'')}</span><span class="muted">${esc(r[2])}</span></li>`).join("")+'</ul>' : "";
+  // 番付
+  const halls=new Set(past.map(r=>r[1])).size;
+  const col=r=>`<div class="col"><span class="dt">${jd(r[0])}</span>${esc(r[1])}</div>`;
+  if(past.length){
+    const y=+past[0][0].slice(0,4);
+    $("bz").innerHTML=`<div class="ttl">来店番付<small>${reiwa(y)}</small></div>`+past.map(col).join("");
+    $("sched-sub").textContent=`これまでに${halls}店舗へ来店しました。右から新しい順です。`;
+  } else {$("bz").hidden=true;}
+  // 花道の帯
+  const rd=$("road");
+  if(up[0]){$("rd-k").textContent=up[0][0]===today?"TODAY":"NEXT";$("rd-v").textContent=`${md(up[0][0])} ${up[0][1]}`;$("rd-w").textContent=up[0][2];}
+  else{$("rd-k").textContent="OPEN";$("rd-v").textContent=`${mon}月の来店日程、受付中`;$("rd-w").textContent=past[0]?`前回 ${md(past[0][0])} ${past[0][1]}`:"";
+    rd.href="#contact";rd.dataset.kind="来店のご依頼";rd.querySelector(".go").firstChild.textContent="来店を相談する ";}
 })();
-</script>
-<script>
-document.getElementById('rf').addEventListener('submit',e=>{
-  e.preventDefault();
-  const v=id=>document.getElementById(id).value.trim();
-  if(!v('r-name')||!v('r-reply')){document.getElementById('r-msgout').textContent='お名前とご連絡先を入力してください。';return;}
-  const body=`お名前：${v('r-name')}\nご連絡先：${v('r-reply')}\nSNS：${v('r-sns')}\n活動エリア：${v('r-area')}\n\n${v('r-msg')}`;
-  location.href='mailto:info@siu-inc.com?subject='+encodeURIComponent('【魁】演者への応募・相談')+'&body='+encodeURIComponent(body);
-});
-document.getElementById('f').addEventListener('submit',e=>{
-  e.preventDefault();
-  const v=id=>document.getElementById(id).value.trim();
-  if(!v('name')||!v('reply')||!v('msg')){document.getElementById('fmsg').textContent='お名前・ご連絡先・内容を入力してください。';return;}
-  const body=`ご用件：${v('kind')}\n店舗名・会社名：${v('org')}\nお名前：${v('name')}\nご連絡先：${v('reply')}\n\n${v('msg')}`;
-  location.href='mailto:info@siu-inc.com?subject='+encodeURIComponent('【魁】'+v('kind'))+'&body='+encodeURIComponent(body);
-  document.getElementById('fmsg').textContent='メールアプリが開かない場合は、お手数ですが時間をおいて再度お試しください。';
-});
+
+/* 花びら（ヒーロー） */
+(function(){
+  const c=document.getElementById("petals"),x=c.getContext("2d");
+  const reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+  const cols=["#F6D9DF","#EDBFC9","#C2214A","#F6D9DF","#FFFFFF"];
+  let W,H,P=[],run=true,dpr=Math.min(devicePixelRatio||1,2);
+  function size(){const r=c.getBoundingClientRect();W=r.width;H=r.height;c.width=W*dpr;c.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0);}
+  function mk(init){return{x:Math.random()*W,y:init?Math.random()*H:-20,s:6+Math.random()*9,vy:.35+Math.random()*.7,vx:-.2+Math.random()*.6,a:Math.random()*6.28,va:-.02+Math.random()*.04,sw:Math.random()*6.28,c:cols[(Math.random()*cols.length)|0]}}
+  function draw(p){x.save();x.translate(p.x,p.y);x.rotate(p.a);x.scale(1,.55+.45*Math.sin(p.sw));x.fillStyle=p.c;x.globalAlpha=p.c==="#C2214A"?.55:.9;
+    x.beginPath();x.moveTo(0,-p.s);x.quadraticCurveTo(p.s*.9,-p.s*.2,0,p.s);x.quadraticCurveTo(-p.s*.9,-p.s*.2,0,-p.s);x.fill();
+    if(p.c==="#FFFFFF"){x.strokeStyle="#EDBFC9";x.lineWidth=1;x.stroke();}x.restore();}
+  function frame(){x.clearRect(0,0,W,H);for(const p of P){p.y+=p.vy;p.x+=p.vx+Math.sin(p.sw)*.3;p.a+=p.va;p.sw+=.02;if(p.y>H+20){Object.assign(p,mk(false));}draw(p);} if(run)requestAnimationFrame(frame);}
+  size();const N=W<600?18:32;for(let i=0;i<N;i++)P.push(mk(true));
+  addEventListener("resize",()=>{size();if(reduce){x.clearRect(0,0,W,H);P.forEach(draw);}});
+  if(reduce){P.forEach(draw);return;}
+  if("IntersectionObserver" in window){new IntersectionObserver(e=>{const v=e[0].isIntersecting;if(v&&!run){run=true;requestAnimationFrame(frame);}run=v;}).observe(c);}
+  requestAnimationFrame(frame);
+})();
+
+/* 現在地・スマホ下部ボタン */
+(function(){
+  if(!("IntersectionObserver" in window))return;
+  const links=[...document.querySelectorAll(".hd nav a.lk")];const map=new Map(links.map(a=>[a.getAttribute("href").slice(1),a]));
+  const so=new IntersectionObserver(es=>es.forEach(e=>{const a=map.get(e.target.id);if(a&&e.isIntersecting){links.forEach(l=>l.removeAttribute("aria-current"));a.setAttribute("aria-current","true");}}),{rootMargin:"-45% 0px -50% 0px"});
+  map.forEach((a,id)=>{const s=document.getElementById(id);if(s)so.observe(s);});
+  const mc=document.getElementById("mcta");let past=false;const vis=new Set();
+  const upd=()=>mc.classList.toggle("show",past&&vis.size===0);
+  new IntersectionObserver(e=>{past=!e[0].isIntersecting;upd();}).observe(document.querySelector(".hero"));
+  const fo=new IntersectionObserver(es=>{es.forEach(e=>e.isIntersecting?vis.add(e.target):vis.delete(e.target));upd();});
+  fo.observe(document.getElementById("f"));fo.observe(document.getElementById("rf"));
+})();
+
+/* スマホのメニュー */
+(function(){const d=document.querySelector(".mnav");if(!d)return;
+  d.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>d.open=false));
+  document.addEventListener("keydown",e=>{if(e.key==="Escape"&&d.open){d.open=false;d.querySelector("summary").focus();}});
+  document.addEventListener("click",e=>{if(d.open&&!d.contains(e.target))d.open=false;});})();
+
+/* フォーム */
+(function(){
+  const $=id=>document.getElementById(id);
+  const seg=[...document.querySelectorAll("#seg button")];
+  const setKind=k=>seg.forEach(b=>b.setAttribute("aria-pressed",String(b.textContent===k)));
+  seg.forEach(b=>b.addEventListener("click",()=>setKind(b.textContent)));
+  document.addEventListener("click",e=>{const a=e.target.closest("[data-kind]");if(a)setKind(a.dataset.kind);});
+  const kind=()=>(seg.find(b=>b.getAttribute("aria-pressed")==="true")||seg[0]).textContent;
+  const check=(ids,out,msg)=>{let ok=true;ids.forEach(id=>{const bad=!$(id).value.trim();$(id).setAttribute("aria-invalid",bad);if(bad&&ok){$(id).focus();ok=false;}});if(!ok)$(out).textContent=msg;return ok;};
+  const v=id=>$(id).value.trim();
+  $("rf").addEventListener("submit",e=>{e.preventDefault();
+    if(!check(["r-name","r-reply"],"r-out","お名前とご連絡先を入力してください。"))return;
+    const body=`お名前：${v('r-name')}\nご連絡先：${v('r-reply')}\nSNS：${v('r-sns')}\n活動エリア：${v('r-area')}\n\n${v('r-msg')}`;
+    location.href='mailto:info@siu-inc.com?subject='+encodeURIComponent('【花吹雪】演者への応募・相談')+'&body='+encodeURIComponent(body);
+    $("r-out").textContent='メールアプリが開かない場合は、下の「メールアプリが開かないとき」のアドレスへお送りください。';});
+  $("f").addEventListener("submit",e=>{e.preventDefault();
+    if(!check(["name","reply","msg"],"f-out","お名前・ご連絡先・内容を入力してください。"))return;
+    const body=`ご用件：${kind()}\n店舗名・会社名：${v('org')}\nお名前：${v('name')}\nご連絡先：${v('reply')}\n\n${v('msg')}`;
+    location.href='mailto:info@siu-inc.com?subject='+encodeURIComponent('【花吹雪】'+kind())+'&body='+encodeURIComponent(body);
+    $("f-out").textContent='メールアプリが開かない場合は、下の「メールアプリが開かないとき」のアドレスへお送りください。';});
+  document.querySelectorAll(".copybtn").forEach(b=>b.addEventListener("click",()=>{const c=$(b.dataset.t),o=b.nextElementSibling;
+    (navigator.clipboard?navigator.clipboard.writeText(c.textContent):Promise.reject()).then(()=>{o.textContent="コピーしました";},()=>{getSelection().selectAllChildren(c);o.textContent="選択しました";});}));
+  document.querySelectorAll("input,textarea").forEach(i=>i.addEventListener("input",()=>i.removeAttribute("aria-invalid")));
+})();
 </script>
 </body>
 </html>
