@@ -10,7 +10,12 @@
 <meta property="og:description" content="稼働を、満開に。パチンコ・パチスロの取材・来店媒体。">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://sakigake-info.github.io/">
+<meta property="og:image" content="https://sakigake-info.github.io/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://sakigake-info.github.io/ogp.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%231D1A1E'/%3E%3Cpath d='M12 4c3 3 3 6 0 9-3-3-3-6 0-9z' fill='%23F6D9DF'/%3E%3Cpath d='M12 13c3-1 6 0 7 3-3 1-6 0-7-3z' fill='%23C2214A'/%3E%3Cpath d='M12 13c-3-1-6 0-7 3 3 1 6 0 7-3z' fill='%23F6D9DF'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,10 +67,10 @@ a{color:inherit}
 /* hero */
 .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
 .hero canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,560px) 1fr;gap:64px;align-items:center;padding-block:64px}
+.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,560px) 1fr;gap:64px;align-items:center;padding-block:56px}
 .hero .eyebrow{font-size:14px;font-weight:700;letter-spacing:.12em;display:flex;align-items:center;gap:10px}
 .hero .eyebrow::before{content:"";width:28px;height:2px;background:var(--ink)}
-.hero .lead{margin-top:24px;max-width:24em;font-size:20px;line-height:1.8;color:var(--ink)}
+.hero .lead{margin-top:28px;max-width:20em;font-family:var(--mincho);font-weight:700;font-size:clamp(20px,2.2vw,27px);line-height:1.75;color:var(--ink)}
 .hero .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
 .btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 28px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;border:1.5px solid var(--ink);background:transparent;color:var(--ink);transition:background .15s,transform .15s}
 .btn:hover{background:var(--paper)}
@@ -82,6 +87,14 @@ a{color:inherit}
   .hero h1.yoko em{font-style:normal;color:var(--beni)}
 }
 
+/* hero facts（頼む理由） */
+.facts{list-style:none;margin:40px 0 0;padding:20px 0 0;border-top:1px solid var(--ink);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.facts li{display:grid;gap:4px;align-content:start}
+.facts b{font-family:var(--mincho);font-weight:800;font-size:clamp(22px,2.4vw,28px);line-height:1.2}
+.facts b small{font-size:.6em;margin-left:2px}
+.facts span{font-size:13px;line-height:1.6;color:var(--muted);word-break:auto-phrase}
+@media (max-width:760px){.facts{margin-top:32px;gap:12px}.facts span{font-size:12px}}
+
 /* 番付（来店実績） */
 .banzuke{display:flex;flex-direction:row-reverse;justify-content:flex-start;border-block:4px double var(--ink);overflow-x:auto;background:var(--bg)}
 .banzuke .col{writing-mode:vertical-rl;flex:1 1 auto;padding:16px 10px;border-left:1px solid var(--line);font-family:var(--mincho);font-weight:700;font-size:18px;line-height:1.2;letter-spacing:.08em;min-height:320px}
@@ -92,7 +105,7 @@ a{color:inherit}
 .banzuke.big .ttl{font-size:30px;padding:20px}
 .banzuke:focus-visible{outline:2px solid var(--beni);outline-offset:4px}
 .scroll-note{display:none;font-size:13px;color:var(--muted);margin-top:8px}
-@media (max-width:760px){.banzuke{scroll-snap-type:x mandatory}.banzuke .col,.banzuke .ttl{scroll-snap-align:end}.banzuke.big .col{flex:0 0 56px;min-height:280px;font-size:17px;padding:16px 4px}.banzuke.big .ttl{font-size:24px;padding:16px 12px}.scroll-note{display:block}}
+@media (max-width:760px){.banzuke{scroll-snap-type:x mandatory;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 48px);mask-image:linear-gradient(to right,transparent 0,#000 48px)}.banzuke .col,.banzuke .ttl{scroll-snap-align:end}.banzuke.big .col{flex:0 0 56px;min-height:280px;font-size:17px;padding:16px 4px}.banzuke.big .ttl{font-size:24px;padding:16px 12px}.scroll-note{display:block}}
 
 /* 花道（次回の来店帯） */
 .road{background:var(--ink);color:#fff}
@@ -120,7 +133,7 @@ a{color:inherit}
 .cast .num .cap b{display:block;color:#fff;font-family:var(--mincho);font-size:18px;margin-top:4px}
 .cast .prof{padding:32px 32px 32px 40px;display:grid;gap:16px;align-content:center}
 .cast .role{font-size:14px;font-weight:700;letter-spacing:.08em;color:var(--muted)}
-.cast .name{font-size:clamp(36px,4.6vw,52px);letter-spacing:.06em}
+.cast .name{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .cast .handle{font-family:var(--mono);font-size:14px;color:var(--muted)}
 .cast dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 24px;font-size:15px}
 .cast dt{color:var(--muted)}
@@ -129,12 +142,12 @@ a{color:inherit}
 .links a{min-height:44px;min-width:44px;display:inline-flex;align-items:center;gap:6px;text-decoration:none;border-bottom:1.5px solid var(--ink)}
 .links a:hover{color:var(--beni);border-color:var(--beni)}
 .links span{min-height:44px;display:inline-flex;align-items:center;color:var(--muted);font-weight:500}
-.slots{display:grid;grid-template-columns:repeat(3,1fr)}
+.slots{display:block}
 .slot{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:88px;padding:0 24px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);text-decoration:none;transition:background .15s}
 .slot:last-child{border-right:0}
 .slot:hover{background:var(--sakura)}
 .slot .n{font-family:var(--mincho);font-weight:700;font-size:15px;letter-spacing:.16em;color:var(--muted)}
-.slot .t{font-family:var(--mincho);font-weight:800;font-size:22px}
+.slot .t{font-family:var(--mincho);font-weight:800;font-size:22px;flex:1}
 .slot .ar{font-weight:700}
 @media (max-width:760px){
   .cast{grid-template-columns:1fr}
@@ -144,19 +157,57 @@ a{color:inherit}
   .cast .prof .name{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
   .cast .prof{padding:24px 4px}
   .slots{grid-template-columns:1fr}
-  .slot{border-right:0;min-height:64px;padding:0 4px}
+  .slot{border-right:0;min-height:72px;padding:12px 4px;flex-wrap:wrap;row-gap:2px}
+  .slot .n{width:100%;font-size:13px}
+  .slot .t{font-size:20px}
 }
 
 /* schedule */
 .next{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;padding:28px 0;border-top:2px solid var(--ink);border-bottom:1px solid var(--line)}
 .next b{font-family:var(--mincho);font-weight:800;font-size:24px}
-.next a{font-weight:700;color:var(--beni);text-decoration:none;min-height:44px;display:inline-flex;align-items:center;border-bottom:1.5px solid var(--beni)}
+.next a{font-weight:700;color:var(--ink);text-decoration:none;min-height:44px;display:inline-flex;align-items:center;border-bottom:1.5px solid var(--ink)}
 .up{list-style:none;margin:0;padding:0}
 .up li{display:grid;grid-template-columns:120px 1fr auto;gap:16px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--line)}
 .up .d{font-family:var(--mono);font-size:15px}
 .up .h{font-family:var(--mincho);font-weight:700;font-size:20px}
 .tag{font-size:12px;font-weight:700;color:#fff;background:var(--ink);border-radius:6px;padding:1px 8px;margin-left:10px;vertical-align:3px;font-family:var(--body)}
 @media (max-width:760px){.up li{grid-template-columns:1fr;gap:2px}}
+
+/* sub heading inside section */
+.h3s{font-size:22px;letter-spacing:.04em;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.h3s small{font-family:var(--body);font-weight:500;font-size:14px;color:var(--muted);letter-spacing:0}
+
+/* 告知素材の見本 */
+.kit{display:grid;grid-template-columns:minmax(0,420px) 1fr;gap:56px;align-items:center;border-top:2px solid var(--ink);padding-top:40px}
+.poster{position:relative;aspect-ratio:1/1;background:var(--ink);color:#fff;border-radius:6px;overflow:hidden;display:grid;grid-template-columns:1fr auto;padding:28px;box-shadow:var(--shadow)}
+.kitfig{margin:0}
+.kitfig figcaption{margin-top:10px;font-size:13px;color:var(--muted)}
+.poster .pl{display:flex;flex-direction:column;justify-content:space-between;min-width:0}
+.poster .brand{display:flex;align-items:center;gap:8px;font-family:var(--mincho);font-weight:800;font-size:18px;letter-spacing:.1em}
+.poster .brand svg{width:22px;height:22px}
+.poster .kind{font-family:var(--mincho);font-weight:700;font-size:15px;letter-spacing:.4em;color:var(--sakura);margin-top:8px}
+.poster .when{font-family:var(--mincho);font-weight:800;font-size:clamp(28px,3.4vw,40px);line-height:1.1}
+.poster .when small{display:block;font-family:var(--body);font-weight:500;font-size:14px;color:#D9D2D5;margin-top:8px;letter-spacing:.04em}
+.poster .who{writing-mode:vertical-rl;font-family:var(--mincho);font-weight:800;font-size:clamp(56px,7vw,84px);line-height:1;letter-spacing:.1em;color:#fff;border-left:1px solid #5E5860;padding-left:16px}
+.poster .who small{font-size:14px;letter-spacing:.2em;color:var(--sakura);margin-bottom:12px;font-weight:700}
+.kitlist{list-style:none;margin:0;padding:0;counter-reset:k}
+.kitlist li{display:grid;grid-template-columns:48px 1fr;gap:2px 12px;padding:16px 0;border-bottom:1px solid var(--line)}
+.kitlist li::before{counter-increment:k;content:counter(k,decimal-leading-zero);grid-row:span 2;font-family:var(--mono);font-weight:500;font-size:15px;line-height:1.9;color:var(--muted)}
+.kitlist b{font-size:17px}
+.kitlist span{font-size:14px;color:var(--muted)}
+.postsample{margin-top:24px;font-size:14px;border-left:3px solid var(--ink);padding:2px 0 2px 16px;line-height:1.8}
+.postsample b{display:block;font-size:12px;color:var(--muted);letter-spacing:.08em;margin-bottom:4px}
+@media (max-width:760px){.kit{grid-template-columns:1fr;gap:32px;padding-top:28px}.poster{padding:22px}}
+
+/* FAQ */
+.faq{border-top:2px solid var(--ink)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0;font-weight:700;font-size:17px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);font-size:22px;font-weight:500;flex:none;width:32px;text-align:center}
+.faq details[open] summary::after{content:"−"}
+.faq summary:hover{color:var(--beni)}
+.faq p{padding:0 48px 20px 0;color:var(--muted);max-width:44em}
 
 /* flow */
 .flow{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
@@ -180,6 +231,7 @@ a{color:inherit}
 /* recruit */
 .recruit{background:var(--sakura);margin-top:96px;padding-block:96px;position:relative;overflow:hidden}
 .recruit .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.recruit .kicker{font-size:14px;font-weight:700;letter-spacing:.12em;margin-bottom:12px}
 .recruit h2{font-size:clamp(28px,3.6vw,44px);line-height:1.4}
 .recruit .txt{margin-top:24px;font-size:16px}
 .recruit ul{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:10px;font-weight:700}
@@ -218,19 +270,25 @@ textarea{min-height:110px;resize:vertical}
 @media (min-width:761px){#rf{grid-template-columns:1fr 1fr;column-gap:16px}#rf>label:nth-of-type(n+5),#rf>.fbtn,#rf>.fmsg,#rf>.mailalt{grid-column:1/-1}}
 
 /* contact */
+.mailline{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:15px;font-weight:700}
+.mailline code{font-family:var(--mono);font-size:16px;font-weight:500;border-bottom:1.5px solid var(--ink);padding:2px 0;margin-right:8px}
+.mailline button{font:inherit;font-size:14px;font-weight:700;min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid var(--ink);background:#fff;cursor:pointer}
 .contact{display:grid;grid-template-columns:1fr;gap:32px}
-.contact form{max-width:880px}
+.contact form{max-width:none}
 .contact .side p{margin-top:16px}
 .contact form{border-top:2px solid var(--ink);padding-top:28px}
-@media (min-width:761px){#f{grid-template-columns:1fr 1fr;column-gap:16px}#f>div,#f>label:nth-of-type(1),#f>label:nth-of-type(n+4),#f>.fbtn,#f>.fmsg,#f>.mailalt{grid-column:1/-1}}
+@media (min-width:761px){#f{grid-template-columns:1fr 1fr;column-gap:16px}#f>div,#f>label:nth-of-type(1),#f>label:nth-of-type(n+4),#f>.fbtn,#f>.fmsg{grid-column:1/-1}}
 @media (max-width:760px){.contact{grid-template-columns:1fr;gap:28px}}
 
 /* footer */
 .ft{margin-top:120px;border-top:1px solid var(--line);padding-block:40px 48px}
 .ft .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:20px 32px;align-items:center;font-size:14px;color:var(--muted)}
-.ft nav{display:flex;flex-wrap:wrap;gap:0 18px}
+.ft nav{display:flex;flex-wrap:wrap;gap:0 14px}
 .ft nav a{min-height:44px;min-width:44px;display:inline-flex;align-items:center;text-decoration:none}
-.ft nav a:hover{color:var(--ink)}
+.ft nav a:hover,.ftr a:hover{color:var(--ink)}
+.ftr{display:flex;flex-direction:column;align-items:flex-end}
+@media (max-width:760px){.ftr{align-items:flex-start}}
+.ftr a{min-height:44px;display:inline-flex;align-items:center;text-decoration:none}
 @media (max-width:760px){.ft .wrap{grid-template-columns:1fr}.ft{margin-top:80px}}
 
 @media (prefers-reduced-motion:reduce){.mcta,.btn .ar{transition:none!important}}
@@ -255,7 +313,7 @@ textarea{min-height:110px;resize:vertical}
   <div class="wrap">
     <a class="logo" href="#top" aria-label="花吹雪 HANAFUBUKI トップへ"><svg aria-hidden="true"><use href="#mark"/></svg><span class="jp" aria-hidden="true">花吹雪</span><span class="en" aria-hidden="true">HANAFUBUKI</span></a>
     <nav aria-label="サイト内">
-      <a class="lk" href="#schedule">取材スケジュール</a><a class="lk" href="#cast">出演者</a><a class="lk" href="#hall">取材のご依頼</a><a class="lk" href="#recruit">出演者募集</a><details class="mnav"><summary>メニュー</summary><div class="menu"><a href="#schedule">取材スケジュール</a><a href="#cast">出演者</a><a href="#hall">取材のご依頼</a><a href="#casting">演者キャスティング</a><a href="#recruit">出演者募集</a></div></details><a class="cta" href="#contact" data-kind="取材のご依頼">取材依頼</a>
+      <a class="lk" href="#schedule">取材スケジュール</a><a class="lk" href="#cast">出演者</a><a class="lk" href="#hall">取材のご依頼</a><a class="lk" href="#recruit">出演者募集</a><details class="mnav"><summary>メニュー</summary><div class="menu"><a href="#schedule">取材スケジュール</a><a href="#cast">出演者</a><a href="#hall">取材のご依頼</a><a href="#kit">告知素材の見本</a><a href="#casting">演者キャスティング</a><a href="#recruit">出演者募集</a><a href="#faq">よくある質問</a></div></details><a class="cta" href="#contact" data-kind="取材のご依頼">取材依頼</a>
     </nav>
   </div>
 </header>
@@ -267,8 +325,9 @@ textarea{min-height:110px;resize:vertical}
       <div>
         <p class="eyebrow">パチンコ・パチスロ 取材・来店媒体</p>
         <h1 class="yoko" id="h-hero">稼働を、<br><em>満開に。</em></h1>
-        <p class="lead">出演者の来店実戦と取材を、告知素材から当日の記録まで、ひとつの媒体でお届けします。</p>
+        <p class="lead">出演者の来店実戦と取材を、告知素材から当日の記録まで、<wbr><span style="white-space:nowrap">ひとつの媒体で</span>お届けします。</p>
         <div class="btns"><a class="btn beni" href="#contact" data-kind="取材のご依頼">取材を依頼する <span class="ar" aria-hidden="true">→</span></a><a class="btn" href="#schedule">取材スケジュール</a></div>
+        <ul class="facts" aria-label="花吹雪の取材でできること"><li><b>4<small>点</small></b><span>告知素材をセットでお渡し</span></li><li><b>関東</b><span>近郊のホールが中心</span></li><li><b>報告</b><span>終了後に記録をお届け</span></li></ul>
       </div>
       <p class="tate" aria-hidden="true">稼働を、<br><em>満開に。</em></p>
     </div>
@@ -283,7 +342,9 @@ textarea{min-height:110px;resize:vertical}
   <section class="sec" id="schedule" aria-labelledby="h-sched">
     <div class="wrap">
       <div class="sec-head"><h2 class="h2" id="h-sched">取材スケジュール</h2><p class="muted" id="sched-sub"></p></div>
+      <h3 class="h3s">これからの取材</h3>
       <div id="up"></div>
+      <h3 class="h3s">出演者の来店実績<small>苺ゆい・右から新しい順</small></h3>
       <div class="banzuke big" id="bz" role="region" aria-label="来店番付" tabindex="0"></div>
       <p class="scroll-note">← 左へスワイプすると、過去の来店が見られます</p>
     </div>
@@ -306,9 +367,7 @@ textarea{min-height:110px;resize:vertical}
         </div>
       </article>
       <div class="slots">
-        <a class="slot" href="#recruit" aria-label="其の二 募集中。出演者募集を見る"><span class="n">其の二</span><span class="t">募集中</span><span class="ar" aria-hidden="true">→</span></a>
-        <a class="slot" href="#recruit" aria-label="其の三 募集中。出演者募集を見る"><span class="n">其の三</span><span class="t">募集中</span><span class="ar" aria-hidden="true">→</span></a>
-        <a class="slot" href="#recruit" aria-label="其の四 募集中。出演者募集を見る"><span class="n">其の四</span><span class="t">募集中</span><span class="ar" aria-hidden="true">→</span></a>
+        <a class="slot" href="#recruit"><span class="n">其の二〜其の四</span><span class="t">出演者を募集しています</span><span class="ar" aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
@@ -326,11 +385,48 @@ textarea{min-height:110px;resize:vertical}
     </div>
   </section>
 
+  <section class="sec" id="kit" aria-labelledby="h-kit">
+    <div class="wrap">
+      <div class="sec-head"><h2 class="h2" id="h-kit">告知素材の見本</h2><p class="muted">取材が決まると、ホールでそのまま使える告知素材をセットでお渡しします。下は見本です。</p></div>
+      <div class="kit">
+        <figure class="kitfig"><div class="poster" role="img" aria-label="告知画像の見本。花吹雪 取材、〇月〇日、〇〇ホール △△店、出演 苺ゆい">
+          <div class="pl" aria-hidden="true">
+            <div><div class="brand"><svg viewBox="0 0 32 32"><path d="M16 2c5 4 5 9 0 13-5-4-5-9 0-13z" fill="#fff"/><path d="M16 15c5-2 10 0 12 5-5 2-10 0-12-5z" fill="#C2214A"/><path d="M16 15c-5-2-10 0-12 5 5 2 10 0 12-5z" fill="#fff"/><path d="M16 15c2 5 1 10-3 14-2-5-1-10 3-14z" fill="#EDBFC9"/><path d="M16 15c-2 5-1 10 3 14 2-5 1-10-3-14z" fill="#fff" opacity=".85"/></svg>花吹雪</div><div class="kind">取材</div></div>
+            <div class="when">〇月〇日<small>〇〇ホール △△店</small></div>
+          </div>
+          <p class="who" aria-hidden="true"><small>出演</small>苺ゆい</p>
+        </div><figcaption>告知画像の見本（日付・店名は取材ごとに入ります）</figcaption></figure>
+        <div>
+          <ol class="kitlist">
+            <li><b>告知画像</b><span>店内掲示とSNSで使える正方形・縦長の2サイズ</span></li>
+            <li><b>出演者写真</b><span>告知物にそのまま使える写真</span></li>
+            <li><b>告知文</b><span>店内掲示や会員向けの案内に使える文章</span></li>
+            <li><b>SNS投稿文</b><span>ホールのXにそのまま投稿できる文章</span></li>
+          </ol>
+          <p class="postsample"><b>SNS投稿文の見本</b>〇月〇日（〇）は〇〇ホール △△店に花吹雪の取材が入ります。出演は苺ゆい。当日の様子は花吹雪からも発信します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="faq" aria-labelledby="h-faq">
+    <div class="wrap">
+      <div class="sec-head"><h2 class="h2" id="h-faq">よくある質問</h2></div>
+      <div class="faq">
+        <details><summary>料金はいくらですか？</summary><p>取材の内容・日数・エリアに合わせてお見積もりします。ご相談とお見積もりは無料です。</p></details>
+        <details><summary>どのエリアに対応していますか？</summary><p>関東近郊が中心です。ほかの地域も、まずはご相談ください。</p></details>
+        <details><summary>いつまでに依頼すればいいですか？</summary><p>日程が決まっていなくても大丈夫です。候補日が近い場合も、まずはお問い合わせください。</p></details>
+        <details><summary>告知素材はいつ届きますか？</summary><p>日程と出演者が決まったあと、取材日より前にお渡しします。</p></details>
+        <details><summary>日程の変更やキャンセルはできますか？</summary><p>決まったあとの変更は、わかった時点で早めにご連絡ください。条件はご依頼時にご案内します。</p></details>
+      </div>
+    </div>
+  </section>
+
   <section class="sec" id="casting" aria-labelledby="h-casting">
     <div class="wrap">
       <div class="agency">
         <div><p class="kicker">演者キャスティング</p><h2 class="h2" id="h-casting">演者の手配だけでも、<br>承ります。</h2></div>
-        <div><p>取材とは別に、演者キャスティングも行っています。客層と機種に合う演者を選び、告知素材の用意から当日の運営までまとめて担当します。</p><a class="btn" href="#contact" data-kind="演者キャスティングのご依頼">キャスティングを相談する <span class="ar" aria-hidden="true">→</span></a></div>
+        <div><p>取材とは別に、演者キャスティングも行っています。客層と機種に合う演者を選び、告知素材の用意から当日の運営まで、<wbr>まとめて担当します。</p><a class="btn" href="#contact" data-kind="演者キャスティングのご依頼">キャスティングを相談する <span class="ar" aria-hidden="true">→</span></a></div>
       </div>
     </div>
   </section>
@@ -338,6 +434,7 @@ textarea{min-height:110px;resize:vertical}
   <section class="recruit" id="recruit" aria-labelledby="h-rec">
     <div class="wrap">
       <div>
+        <p class="kicker">出演者募集</p>
         <h2 id="h-rec">指名は、<br>実力で取りにいく。</h2>
         <p class="txt">来店の予定が埋まっていない演者さんも募集中です。花吹雪独自のホールとのつながりで、来店案件をご紹介します。まずはお気軽にご相談ください。</p>
         <ul><li>来店・動画に出演できる方</li><li>未経験可</li><li>関東近郊で活動できる方</li></ul>
@@ -364,6 +461,7 @@ textarea{min-height:110px;resize:vertical}
       <div class="side">
         <h2 class="h2" id="h-con">お問い合わせ</h2>
         <p class="muted">取材のご依頼、演者キャスティングのご相談はこちらから。お送りいただいた情報の扱いは<a href="privacy.html">プライバシーポリシー</a>に記載しています。</p>
+        <p class="mailline">メール：<code id="addr0">info@siu-inc.com</code><button type="button" class="copybtn" data-t="addr0">コピー</button><span aria-live="polite"></span></p>
       </div>
       <form id="f" novalidate>
         <div><p style="font-size:14px;font-weight:700;margin-bottom:8px">ご用件</p>
@@ -375,7 +473,6 @@ textarea{min-height:110px;resize:vertical}
         <label for="msg">内容<span class="req">必須</span><textarea id="msg" required placeholder="候補日・エリア・機種など、決まっている範囲でどうぞ"></textarea></label>
         <button class="fbtn beni" type="submit">依頼メールを作成する</button>
         <p class="fmsg" id="f-out" aria-live="polite">送信ボタンを押すと、入力内容が入った状態でメールアプリが開きます。</p>
-        <details class="mailalt"><summary>メールアプリが開かないとき</summary><div class="addr"><code id="addr1">info@siu-inc.com</code><button type="button" class="copybtn" data-t="addr1">コピー</button><span aria-live="polite"></span></div><p>このアドレスに、上の内容をお送りください。</p></details>
       </form>
     </div>
   </section>
@@ -384,8 +481,8 @@ textarea{min-height:110px;resize:vertical}
 <footer class="ft">
   <div class="wrap">
     <a class="logo" href="#top" aria-label="花吹雪 HANAFUBUKI トップへ"><svg aria-hidden="true"><use href="#mark"/></svg><span class="jp" aria-hidden="true" style="font-size:20px">花吹雪</span></a>
-    <nav aria-label="フッター"><a href="#schedule">取材スケジュール</a><a href="#cast">出演者</a><a href="#hall">取材のご依頼</a><a href="#casting">演者キャスティング</a><a href="#recruit">出演者募集</a><a href="#contact">お問い合わせ</a><a href="privacy.html">プライバシーポリシー</a></nav>
-    <span>© HANAFUBUKI</span>
+    <nav aria-label="フッター"><a href="#schedule">取材スケジュール</a><a href="#cast">出演者</a><a href="#hall">取材のご依頼</a><a href="#casting">演者キャスティング</a><a href="#recruit">出演者募集</a><a href="#faq">よくある質問</a><a href="#contact">お問い合わせ</a></nav>
+    <span class="ftr"><a href="privacy.html">プライバシーポリシー</a>© HANAFUBUKI</span>
   </div>
 </footer>
 
@@ -414,19 +511,19 @@ const SCHEDULE=[
   const mon=+today.slice(5,7);
   // 今後の予定（あるときだけ表）
   $("up").innerHTML = up.length
-    ? '<ul class="up" style="border-top:2px solid var(--ink);margin-bottom:48px">'+up.map((r,i)=>`<li><span class="d">${md(r[0])}</span><span class="h">${esc(r[1])}${r[0]===today?'<span class="tag">本日</span>':(i===0?'<span class="tag">次回</span>':'')}</span><span class="muted">${esc(r[2])}</span></li>`).join("")+'</ul>' : `<div class="next" style="margin-bottom:48px"><b>${mon}月の取材日程、受付中です</b><a href="#contact" data-kind="取材のご依頼">取材を相談する →</a></div>`;
+    ? '<ul class="up" style="border-top:2px solid var(--ink);margin-bottom:48px">'+up.map((r,i)=>`<li><span class="d">${md(r[0])}</span><span class="h">${esc(r[1])}${r[0]===today?'<span class="tag">本日</span>':(i===0?'<span class="tag">次回</span>':'')}</span><span class="muted">${esc(r[2])}</span></li>`).join("")+'</ul>' : `<div class="next" style="margin-bottom:48px"><b>日程は決まり次第、<wbr><span style="white-space:nowrap">ここに載せます</span></b><a href="#contact" data-kind="取材のご依頼">候補日を相談する →</a></div>`;
   // 番付
   const halls=new Set(past.map(r=>r[1])).size;
   const col=r=>`<div class="col"><span class="dt">${jd(r[0])}</span>${esc(r[1])}</div>`;
   if(past.length){
     const y=+past[0][0].slice(0,4);
-    $("bz").innerHTML=`<div class="ttl">来店番付<small>${reiwa(y)}</small></div>`+past.map(col).join("");
-    $("sched-sub").textContent=`次の取材の予定と、出演者・苺ゆいの来店実績（${halls}店舗、右から新しい順）です。`;
+    $("bz").innerHTML=`<div class="ttl">来店番付<small>苺ゆい　${reiwa(y)}</small></div>`+past.map(col).join("");
+    $("sched-sub").textContent=`これからの取材日程と、出演者の来店実績（${halls}店舗）です。`;
   } else {$("bz").hidden=true;}
   // 花道の帯
   const rd=$("road");
   if(up[0]){$("rd-k").textContent=up[0][0]===today?"TODAY":"NEXT";$("rd-v").textContent=`${md(up[0][0])} ${up[0][1]}`;$("rd-w").textContent=up[0][2];}
-  else{$("rd-k").textContent="OPEN";$("rd-v").textContent=`${mon}月の取材日程、受付中`;$("rd-w").textContent=past[0]?`出演者の前回来店 ${md(past[0][0])} ${past[0][1]}`:"";
+  else{$("rd-k").textContent="OPEN";$("rd-v").textContent=`${mon}月の取材、ご相談受付中`;$("rd-w").textContent=past[0]?`出演者の前回来店 ${md(past[0][0])} ${past[0][1]}`:"";
     rd.href="#contact";rd.dataset.kind="取材のご依頼";rd.querySelector(".go").firstChild.textContent="取材を相談する ";}
 })();
 
