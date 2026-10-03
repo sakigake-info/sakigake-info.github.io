@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>花吹雪 HANAFUBUKI｜パチンコ・パチスロ取材・来店媒体</title>
+<title>花吹雪 -HANAFUBUKI-｜パチンコ・パチスロ取材・来店媒体</title>
 <meta name="description" content="パチンコ・パチスロの取材・来店媒体、花吹雪（HANAFUBUKI）の公式サイトです。出演者の来店実戦と取材、演者キャスティングを行っています。">
 <meta name="theme-color" content="#FBF7F3">
-<meta property="og:title" content="花吹雪 HANAFUBUKI｜取材・来店媒体">
+<meta property="og:title" content="花吹雪 -HANAFUBUKI-｜取材・来店媒体">
 <meta property="og:description" content="稼働を、満開に。パチンコ・パチスロの取材・来店媒体。">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ja_JP">
@@ -50,7 +50,8 @@ a{color:inherit}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;min-height:44px}
 .logo svg{width:28px;height:28px;flex:none}
 .logo .jp{font-family:var(--mincho);font-weight:800;font-size:26px;letter-spacing:.08em;line-height:1}
-.logo .en{font-family:var(--mono);font-size:12px;letter-spacing:.18em;color:var(--muted);padding-left:10px;border-left:1px solid var(--ink);line-height:1.2}
+.logo .en{font-family:var(--mono);font-size:13px;letter-spacing:.18em;color:var(--beni);line-height:1.2}
+.logo .en.kana{font-family:var(--mincho);font-weight:700;font-size:15px;letter-spacing:.1em}
 .hd nav{display:flex;align-items:center;gap:2px;font-size:14px;font-weight:500}
 .hd nav a{text-decoration:none;padding:0 12px;min-height:44px;display:inline-flex;align-items:center;border-radius:999px}
 .hd nav a:hover{background:var(--sakura)}
@@ -87,6 +88,9 @@ a{color:inherit}
   .hero h1.yoko em{font-style:normal;color:var(--beni)}
 }
 
+.brandline{font-family:var(--mincho);font-weight:800;font-size:28px;letter-spacing:.08em;margin-bottom:18px;display:flex;align-items:baseline;gap:12px}
+.brandline .mono{font-family:var(--mono);font-weight:400;font-size:15px;letter-spacing:.2em;color:var(--beni)}
+.brandline .kana{font-size:18px;font-weight:700;color:var(--beni);letter-spacing:.1em}
 /* hero facts（頼む理由） */
 .facts{list-style:none;margin:40px 0 0;padding:20px 0 0;border-top:1px solid var(--ink);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .facts li{display:grid;gap:4px;align-content:start}
@@ -311,7 +315,7 @@ textarea{min-height:110px;resize:vertical}
 
 <header class="hd">
   <div class="wrap">
-    <a class="logo" href="#top" aria-label="花吹雪 HANAFUBUKI トップへ"><svg aria-hidden="true"><use href="#mark"/></svg><span class="jp" aria-hidden="true">花吹雪</span><span class="en" aria-hidden="true">HANAFUBUKI</span></a>
+    <a class="logo" href="#top" aria-label="花吹雪 HANAFUBUKI トップへ"><svg aria-hidden="true"><use href="#mark"/></svg><span class="jp" aria-hidden="true">花吹雪</span><span class="en mono" aria-hidden="true">-HANAFUBUKI-</span></a>
     <nav aria-label="サイト内">
       <a class="lk" href="#schedule">取材スケジュール</a><a class="lk" href="#cast">出演者</a><a class="lk" href="#hall">取材のご依頼</a><a class="lk" href="#recruit">出演者募集</a><details class="mnav"><summary>メニュー</summary><div class="menu"><a href="#schedule">取材スケジュール</a><a href="#cast">出演者</a><a href="#hall">取材のご依頼</a><a href="#kit">告知素材の見本</a><a href="#casting">演者キャスティング</a><a href="#recruit">出演者募集</a><a href="#faq">よくある質問</a></div></details><a class="cta" href="#contact" data-kind="取材のご依頼">取材依頼</a>
     </nav>
@@ -323,6 +327,7 @@ textarea{min-height:110px;resize:vertical}
     <canvas id="petals" aria-hidden="true"></canvas>
     <div class="wrap">
       <div>
+        <p class="brandline">花吹雪<span class="mono">-HANAFUBUKI-</span></p>
         <p class="eyebrow">パチンコ・パチスロ 取材・来店媒体</p>
         <h1 class="yoko" id="h-hero">稼働を、<br><em>満開に。</em></h1>
         <p class="lead">出演者の来店実戦と取材を、告知素材から当日の記録まで、<wbr><span style="white-space:nowrap">ひとつの媒体で</span>お届けします。</p>
