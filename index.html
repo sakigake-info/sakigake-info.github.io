@@ -532,19 +532,34 @@ const SCHEDULE=[
     rd.href="#contact";rd.dataset.kind="取材のご依頼";rd.querySelector(".go").firstChild.textContent="取材を相談する ";}
 })();
 
-/* 花びら（ヒーロー） */
+/* 花びら（ヒーロー）：風に流れる花吹雪 */
 (function(){
   const c=document.getElementById("petals"),x=c.getContext("2d");
   const reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
-  const cols=["#F6D9DF","#EDBFC9","#C2214A","#F6D9DF","#FFFFFF"];
-  let W,H,P=[],run=true,dpr=Math.min(devicePixelRatio||1,2);
+  const cols=[["#F2C6D0",5],["#E9A9B9",5],["#F8DDE3",3],["#DB8DA2",3],["#C2214A",1]];
+  const tot=cols.reduce((s,c)=>s+c[1],0);
+  const pick=()=>{let v=Math.random()*tot;for(const [c,w] of cols){if((v-=w)<0)return c;}return cols[0][0];};
+  let W,H,P=[],run=true,dpr=Math.min(devicePixelRatio||1,2),t=0;
+  // 花びらの形（先に切れ込み）を色・ぼかし別に先に描いておく
+  const cache=new Map();
+  function sprite(col,blur){const k=col+blur;if(cache.has(k))return cache.get(k);
+    const L=64,pad=blur*3+4,cv=document.createElement("canvas");cv.width=cv.height=L+pad*2;const g=cv.getContext("2d");
+    g.translate(cv.width/2,pad);if(blur)g.filter=`blur(${blur}px)`;
+    const gr=g.createLinearGradient(0,0,0,L);gr.addColorStop(0,col==="#C2214A"?"#D95575":"#FCEEF1");gr.addColorStop(1,col);
+    const w=L*.62;g.beginPath();g.moveTo(0,0);g.bezierCurveTo(w*.62,L*.18,w*.62,L*.78,w*.22,L);g.lineTo(0,L*.86);g.lineTo(-w*.22,L);g.bezierCurveTo(-w*.62,L*.78,-w*.62,L*.18,0,0);g.fillStyle=gr;g.fill();
+    cache.set(k,cv);return cv;}
   function size(){const r=c.getBoundingClientRect();W=r.width;H=r.height;c.width=W*dpr;c.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0);}
-  function mk(init){return{x:Math.random()*W,y:init?Math.random()*H:-20,s:6+Math.random()*9,vy:.35+Math.random()*.7,vx:-.2+Math.random()*.6,a:Math.random()*6.28,va:-.02+Math.random()*.04,sw:Math.random()*6.28,c:cols[(Math.random()*cols.length)|0]}}
-  function draw(p){x.save();x.translate(p.x,p.y);x.rotate(p.a);x.scale(1,.55+.45*Math.sin(p.sw));x.fillStyle=p.c;x.globalAlpha=p.c==="#C2214A"?.55:.9;
-    x.beginPath();x.moveTo(0,-p.s);x.quadraticCurveTo(p.s*.9,-p.s*.2,0,p.s);x.quadraticCurveTo(-p.s*.9,-p.s*.2,0,-p.s);x.fill();
-    if(p.c==="#FFFFFF"){x.strokeStyle="#EDBFC9";x.lineWidth=1;x.stroke();}x.restore();}
-  function frame(){x.clearRect(0,0,W,H);for(const p of P){p.y+=p.vy;p.x+=p.vx+Math.sin(p.sw)*.3;p.a+=p.va;p.sw+=.02;if(p.y>H+20){Object.assign(p,mk(false));}draw(p);} if(run)requestAnimationFrame(frame);}
-  size();const N=W<600?18:32;for(let i=0;i<N;i++)P.push(mk(true));
+  function mk(init){const d=Math.random();const s=d<.45?9+Math.random()*8:d<.94?16+Math.random()*16:40+Math.random()*30;
+    return{x:init?Math.random()*W:-60-Math.random()*W*.3,y:init?Math.random()*H:H*(.2+Math.random()*1.0),s,d,
+      v:.6+d*1.6+Math.random()*.6,a:Math.random()*6.28,va:(-.5+Math.random())*.06,sw:Math.random()*6.28,
+      c:pick(),al:d<.45?.7:d<.94?.9:.5,bl:d<.45?1:d<.94?0:3};}
+  function draw(p){const sp=sprite(p.c,p.bl),k=p.s/64;x.save();x.translate(p.x,p.y);x.rotate(p.a);x.scale(k,k*(.4+.6*Math.abs(Math.sin(p.sw))));x.globalAlpha=p.al;
+    x.drawImage(sp,-sp.width/2,-(p.bl*3+4));x.restore();}
+  function frame(){t+=1;x.clearRect(0,0,W,H);const gust=.6+.5*Math.sin(t*.004)+.35*Math.sin(t*.011);
+    for(const p of P){p.x+=p.v*1.4*gust;p.y+=-p.v*.55*gust+Math.sin(p.sw)*.5+.25;p.a+=p.va;p.sw+=.03;
+      if(p.x>W+80||p.y<-80||p.y>H+80)Object.assign(p,mk(false));draw(p);}
+    if(run)requestAnimationFrame(frame);}
+  size();const N=W<600?46:110;for(let i=0;i<N;i++)P.push(mk(true));P.sort((a,b)=>a.d-b.d);
   addEventListener("resize",()=>{size();if(reduce){x.clearRect(0,0,W,H);P.forEach(draw);}});
   if(reduce){P.forEach(draw);return;}
   if("IntersectionObserver" in window){new IntersectionObserver(e=>{const v=e[0].isIntersecting;if(v&&!run){run=true;requestAnimationFrame(frame);}run=v;}).observe(c);}
