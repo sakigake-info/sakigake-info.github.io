@@ -693,13 +693,11 @@ const SCHEDULE=[
     if(el.tagName==="H1")el.setAttribute("aria-label",el.textContent.replace(/\s+/g,""));
     walk(el);});
   const go=()=>{hero.classList.add("hf-go");};
-  // 幕開き（1セッション1回）
-  let seen=false;try{seen=sessionStorage.getItem("hf-intro")==="1";}catch(e){}
-  if(reduce||seen){intro.remove();go();}
+  // 幕開き（開くたびに毎回）
+  if(reduce){intro.remove();go();}
   else{
     requestAnimationFrame(()=>intro.classList.add("play"));
     let done=false;const open=()=>{if(done)return;done=true;intro.classList.add("open");
-      try{sessionStorage.setItem("hf-intro","1");}catch(e){}
       const r=hero.getBoundingClientRect();if(HF.burst)HF.burst(r.width*.5,Math.min(r.height,innerHeight)*.45,90);
       setTimeout(go,250);setTimeout(()=>intro.remove(),1300);};
     setTimeout(open,2500);intro.addEventListener("click",open);
