@@ -371,7 +371,7 @@ a{color:inherit}svg{display:block}
 .kick{margin:0 0 18px;font:700 clamp(15px,1.5vw,19px)/1.5 var(--jp);color:#fff;letter-spacing:.04em}
 .kick span{display:block;margin-top:6px;font-size:.8em;font-weight:500;color:var(--beni-on-dark);letter-spacing:.12em}
 .bnrs{background:var(--night);padding:8px 0 40px}
-.bgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .bnr{position:relative;display:flex;flex-direction:column;gap:8px;min-height:44px;padding:24px 64px 24px 24px;border-radius:20px;background:var(--tile);box-shadow:inset 0 0 0 1px var(--edge);color:#fff;text-decoration:none;transition:transform .2s var(--ease),background .2s}
 .bnr:hover{transform:translateY(-2px);background:var(--tile2)}
 .bnr.hot{background:linear-gradient(135deg,var(--beni) 0%,var(--beni-d) 100%);box-shadow:none}
@@ -381,6 +381,7 @@ a{color:inherit}svg{display:block}
 .bnr .ds{font-size:14px;line-height:1.7;color:#CFC6CB}
 .bnr.hot .ds{color:#FFE9EF}
 .bnr .go{position:absolute;right:24px;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.1);font-size:18px}
+@media(max-width:960px){.bgrid{grid-template-columns:1fr}}
 @media(max-width:720px){.bgrid{grid-template-columns:1fr}.bnr{padding:20px 60px 20px 20px}.bnrs{padding:0 0 32px}}
 
 .profs{background:var(--night);padding:16px 0 24px}
@@ -503,7 +504,8 @@ a{color:inherit}svg{display:block}
   <nav class="bnrs" aria-label="ご依頼・募集">
     <div class="wrap bgrid">
       <a class="bnr" href="#service"><span class="tg">店舗・企業さまへ</span><b>キャスティングのご依頼</b><span class="ds">演者の手配から告知、当日の取材・報告まで、ひとつの窓口で。</span><span class="go" aria-hidden="true">→</span></a>
-      <a class="bnr hot" href="#join"><span class="tg">キャスト募集中</span><b>演者・インフルエンサー募集</b><span class="ds">未経験の方も、来店の予定が空いている方も。魁から案件をご紹介します。</span><span class="go" aria-hidden="true">→</span></a>
+      <a class="bnr hot" href="#join"><span class="tg">演者・インフルエンサー</span><b>キャスト募集</b><span class="ds">未経験の方も、来店の予定が空いている方も。魁から案件をご紹介します。</span><span class="go" aria-hidden="true">→</span></a>
+      <a class="bnr" href="#contact" data-kind="代理店・提携"><span class="tg">パートナー募集中</span><b>代理店・提携先募集</b><span class="ds">演者を抱える事務所さま、媒体・広告代理店さま。いっしょに来店・取材を広げませんか。</span><span class="go" aria-hidden="true">→</span></a>
     </div>
   </nav>
 
@@ -602,7 +604,7 @@ a{color:inherit}svg{display:block}
       </div>
       <form class="form rv" id="f" novalidate style="--d:.08s">
         <div><p style="font-size:14px;font-weight:700;margin-bottom:10px">ご用件</p>
-          <div class="seg" id="seg" role="group" aria-label="ご用件"><button type="button" aria-pressed="true">来店取材の依頼</button><button type="button" aria-pressed="false">キャスティング依頼</button><button type="button" aria-pressed="false">タレント応募</button><button type="button" aria-pressed="false">その他</button></div>
+          <div class="seg" id="seg" role="group" aria-label="ご用件"><button type="button" aria-pressed="true">来店取材の依頼</button><button type="button" aria-pressed="false">キャスティング依頼</button><button type="button" aria-pressed="false">タレント応募</button><button type="button" aria-pressed="false">代理店・提携</button><button type="button" aria-pressed="false">その他</button></div>
         </div>
         <label for="org"><span>店舗名・会社名・活動名</span><input id="org" autocomplete="organization" placeholder="〇〇店／株式会社〇〇"></label>
         <label for="name"><span>お名前<span class="req">必須</span></span><input id="name" autocomplete="name" required></label>
