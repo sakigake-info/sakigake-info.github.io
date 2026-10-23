@@ -370,7 +370,7 @@ a{color:inherit}svg{display:block}
 
 .kick{margin:0 0 18px;font:700 clamp(15px,1.5vw,19px)/1.5 var(--jp);color:#fff;letter-spacing:.04em}
 .kick span{display:block;margin-top:6px;font-size:.8em;font-weight:500;color:var(--beni-on-dark);letter-spacing:.12em}
-.bnrs{background:var(--night);padding:8px 0 40px}
+.bnrs{background:var(--night);padding:0 0 48px;position:relative;z-index:2}
 .bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .bnr{position:relative;display:flex;flex-direction:column;gap:8px;min-height:44px;padding:24px 64px 24px 24px;border-radius:20px;background:var(--tile);box-shadow:inset 0 0 0 1px var(--edge);color:#fff;text-decoration:none;transition:transform .2s var(--ease),background .2s}
 .bnr:hover{transform:translateY(-2px);background:var(--tile2)}
@@ -399,6 +399,13 @@ a{color:inherit}svg{display:block}
 .one{margin:14px 0 0;font-size:15px;line-height:1.7;color:#fff}
 .tbd{color:#8E858A!important}
 @media(max-width:720px){.pgrid{grid-template-columns:1fr}.pc{grid-template-columns:100px 1fr;gap:14px;padding:16px}.photo span{font-size:44px}.pb dl div{grid-template-columns:72px 1fr;font-size:13px}}
+
+.rbar{display:flex;justify-content:center;gap:28px;height:36px;align-items:center;background:var(--beni);font:700 13px/1 var(--jp)}
+.rbar a{display:inline-flex;align-items:center;gap:8px;min-height:36px;color:#fff;text-decoration:none;white-space:nowrap}
+.rbar a:hover{text-decoration:underline}
+.rbar b{font-size:11px;padding:3px 7px;border-radius:99px;background:#fff;color:var(--beni)}
+.hero{padding-top:156px}
+@media(max-width:720px){.rbar{gap:14px;font-size:11.5px;padding:0 8px;overflow-x:auto;justify-content:flex-start}.rbar b{display:none}.rbar .lg{display:none}.rbar{justify-content:center}.hero{padding-top:120px}}
 </style>
 </head>
 <body>
@@ -414,6 +421,7 @@ a{color:inherit}svg{display:block}
     <details class="mnav"><summary>メニュー</summary><div class="menu"><a href="#schedule">スケジュール</a><a href="#talent">タレント</a><a href="#service">店舗・企業さまへ</a><a href="#faq">よくある質問</a><a href="#join">タレント募集</a><a href="#contact">お問い合わせ</a></div></details>
     <a class="btn sm" href="#contact">お問い合わせ</a>
   </div>
+  <div class="rbar"><a href="#join"><b>募集</b>キャスト<span class="lg">（演者・インフルエンサー）</span>募集中 <span aria-hidden="true">›</span></a><a href="#contact" data-kind="代理店・提携"><b>募集</b>代理店・提携先<span class="lg">も</span>募集中 <span aria-hidden="true">›</span></a></div>
 </header>
 
 <main id="top">
@@ -449,6 +457,13 @@ a{color:inherit}svg{display:block}
   </section>
 
   <div id="main"></div>
+  <nav class="bnrs" aria-label="ご依頼・募集">
+    <div class="wrap bgrid">
+      <a class="bnr" href="#service"><span class="tg">店舗・企業さまへ</span><b>キャスティングのご依頼</b><span class="ds">演者の手配から告知、当日の取材・報告まで、ひとつの窓口で。</span><span class="go" aria-hidden="true">→</span></a>
+      <a class="bnr hot" href="#join"><span class="tg">演者・インフルエンサー</span><b>キャスト募集</b><span class="ds">未経験の方も、来店の予定が空いている方も。魁から案件をご紹介します。</span><span class="go" aria-hidden="true">→</span></a>
+      <a class="bnr" href="#contact" data-kind="代理店・提携"><span class="tg">パートナー募集中</span><b>代理店・提携先募集</b><span class="ds">演者を抱える事務所さま、媒体・広告代理店さま。いっしょに来店・取材を広げませんか。</span><span class="go" aria-hidden="true">→</span></a>
+    </div>
+  </nav>
   <section class="lt sec" id="schedule" aria-labelledby="h-sch">
     <div class="wrap">
       <div class="sec-head rv"><p class="kicker">Schedule</p><h2 id="h-sch" class="ph">これからの来店。</h2><p class="ph">来店日・お店・出演タレントを毎日更新しています。</p></div>
@@ -501,13 +516,7 @@ a{color:inherit}svg{display:block}
     </div>
   </section>
 
-  <nav class="bnrs" aria-label="ご依頼・募集">
-    <div class="wrap bgrid">
-      <a class="bnr" href="#service"><span class="tg">店舗・企業さまへ</span><b>キャスティングのご依頼</b><span class="ds">演者の手配から告知、当日の取材・報告まで、ひとつの窓口で。</span><span class="go" aria-hidden="true">→</span></a>
-      <a class="bnr hot" href="#join"><span class="tg">演者・インフルエンサー</span><b>キャスト募集</b><span class="ds">未経験の方も、来店の予定が空いている方も。魁から案件をご紹介します。</span><span class="go" aria-hidden="true">→</span></a>
-      <a class="bnr" href="#contact" data-kind="代理店・提携"><span class="tg">パートナー募集中</span><b>代理店・提携先募集</b><span class="ds">演者を抱える事務所さま、媒体・広告代理店さま。いっしょに来店・取材を広げませんか。</span><span class="go" aria-hidden="true">→</span></a>
-    </div>
-  </nav>
+  
 
   <div class="marquee" aria-hidden="true"><div class="tr"><span>CASTING <b></b> <i>ON-SITE</i> <b></b> CREATIVE <b></b> <i>SOCIAL</i> <b></b> REPORT <b></b> <i>魁 SAKIGAKE</i> <b></b></span><span>CASTING <b></b> <i>ON-SITE</i> <b></b> CREATIVE <b></b> <i>SOCIAL</i> <b></b> REPORT <b></b> <i>魁 SAKIGAKE</i> <b></b></span></div></div>
 
