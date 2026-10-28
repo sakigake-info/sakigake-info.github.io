@@ -417,6 +417,14 @@ a{color:inherit}svg{display:block}
 .hero h1{font:900 clamp(40px,6vw,92px)/1.12 "Zen Old Mincho",serif;letter-spacing:.02em}
 .hero h1 .ln{display:inline-block}
 @media(max-width:720px){.logo img{height:26px}.b9 .slash{height:6px}.hero h1{font-size:clamp(34px,10vw,48px)}.hero h1 .ln{display:block}}
+
+/* タレントカード（B9） */
+.photo{background:#0E0C0F;box-shadow:inset 0 0 0 1px var(--edge);place-items:center}
+.photo .sl{position:absolute;left:-20%;right:-20%;top:58%;height:5px;background:var(--beni);transform:rotate(-8deg)}
+.photo b{position:relative;writing-mode:vertical-rl;font:900 34px/1.1 "Zen Old Mincho",serif;color:#fff;letter-spacing:.12em}
+.photo em{color:var(--beni-on-dark);font:700 10px/1 var(--en);letter-spacing:.24em;bottom:12px}
+.pc{align-items:center}
+@media(max-width:720px){.photo b{font-size:26px}}
 </style>
 </head>
 <body>
@@ -490,27 +498,22 @@ a{color:inherit}svg{display:block}
       <h2 id="h-prof" class="ph2">出演タレント</h2>
       <div class="pgrid">
         <article class="pc" data-until="2026-12-31">
-          <div class="photo" aria-label="苺ゆいの写真（準備中）"><span>苺</span><em>写真【未入力】</em></div>
+          <div class="photo" aria-hidden="true"><i class="sl"></i><b>苺ゆい</b><em>CAST 01</em></div>
           <div class="pb">
             <h3>苺ゆい</h3>
             <dl>
               <div><dt>出身</dt><dd>埼玉県</dd></div>
-              <div><dt>好きな機種</dt><dd class="tbd">【未入力】</dd></div>
               <div><dt>実績</dt><dd><span id="pf-yui">来店取材 –回</span></dd></div>
             </dl>
-            <p class="one tbd">一言：【未入力】</p>
           </div>
         </article>
         <article class="pc">
-          <div class="photo" aria-label="魁ゆにの写真（準備中）"><span>ゆ</span><em>写真【未入力】</em></div>
+          <div class="photo" aria-hidden="true"><i class="sl"></i><b>魁ゆに</b><em>NEW FACE</em></div>
           <div class="pb">
-            <h3>魁ゆに<small>（仮）</small></h3>
+            <h3>魁ゆに</h3>
             <dl>
-              <div><dt>出身</dt><dd class="tbd">【未入力】</dd></div>
-              <div><dt>好きな機種</dt><dd class="tbd">【未入力】</dd></div>
               <div><dt>実績</dt><dd>近日デビュー</dd></div>
             </dl>
-            <p class="one tbd">一言：【未入力】</p>
           </div>
         </article>
       </div>
