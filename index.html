@@ -448,7 +448,7 @@ a.xl{color:inherit;text-decoration:underline;text-underline-offset:3px;text-deco
 .hero .kick{font:700 14px/1 var(--jp);letter-spacing:.4em;color:var(--dim);margin:34px 0 26px}
 .hero h1{font:900 clamp(40px,6vw,92px)/1.12 "Zen Old Mincho",serif;letter-spacing:.02em}
 .hero h1 .ln{display:inline-block}
-.b9{display:flex;align-items:center;justify-content:center;gap:8px;max-width:1100px}.b9 img{margin:0;width:min(680px,62vw)}.b9 img.b9-oni{position:relative;width:min(96px,12vw);align-self:flex-end;margin-bottom:6%;margin-left:10px;filter:drop-shadow(0 0 1.5px rgba(255,255,255,.75)) drop-shadow(0 0 18px rgba(200,36,47,.35))}
+.b9{display:flex;align-items:center;justify-content:center;gap:8px;max-width:1100px}.b9 img{margin:0;width:min(680px,62vw)}.b9 img.b9-neko{position:absolute;left:50%;top:50%;width:min(380px,52vw);height:auto;transform:translate(-50%,-50%);opacity:.12;pointer-events:none;z-index:0}.b9 img:not(.b9-neko){z-index:1}
 @media(max-width:720px){.logo img{height:26px}.b9 .slash{height:6px}.hero h1{font-size:clamp(34px,10vw,48px)}.hero h1 .ln{display:block}}
 
 /* タレントカード（B9） */
@@ -482,7 +482,7 @@ a.xl{color:inherit;text-decoration:underline;text-underline-offset:3px;text-deco
     
     <div class="wrap center">
       <a class="badge fi" style="--d:.1s" href="#talent"><b>NEW</b>新しいタレント「魁ゆに」近日デビュー <span aria-hidden="true">›</span></a>
-      <div class="b9 fi" style="--d:.15s"><span class="slash" aria-hidden="true"></span><img src="logo-sakigake-w.png" alt="魁 サキガケ"><img class="b9-oni" src="oni_issen.png" alt="" aria-hidden="true" width="600" height="409"></div><p class="kick fi" style="--d:.25s">取材・来店メディア</p>
+      <div class="b9 fi" style="--d:.15s"><img class="b9-neko" src="neko_bg.png" alt="" aria-hidden="true" width="730" height="900"><span class="slash" aria-hidden="true"></span><img src="logo-sakigake-w.png" alt="魁 サキガケ"></div><p class="kick fi" style="--d:.25s">取材・来店メディア</p>
       <h1 id="h-hero" aria-label="一番槍、承ります。"><span class="ln" aria-hidden="true"><span class="a" style="--d:.2s">一番槍、</span></span><span class="ln" aria-hidden="true"><span class="b" style="--d:.34s">承ります。</span></span></h1>
       <p class="lead fi ph" style="--d:.6s">推しのタレントが、あのお店にやってくる。来店・取材の予定と当日の様子を、いち早くお届けします。</p>
       <div class="cta fi" style="--d:.75s"><a class="btn" href="#schedule">来店スケジュールを見る <span class="ar" aria-hidden="true">→</span></a><a class="btn glass" href="#talent">出演タレントを見る</a></div>
