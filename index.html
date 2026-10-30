@@ -98,6 +98,7 @@ a{color:inherit}svg{display:block}
 .next .h{font:900 clamp(22px,2.4vw,32px)/1.3 var(--jp);margin-top:14px;letter-spacing:-.02em}
 .next .w{display:flex;align-items:center;gap:10px;margin-top:18px;font-size:14px;color:var(--dim)}
 .av{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font:400 18px/1 var(--fude);background:#F2ECE6;color:var(--ink);flex:0 0 auto}
+.av-img{overflow:hidden;padding:0;background:#FBE3E6}.av-img img{width:100%;height:100%;object-fit:cover;display:block}
 .av.b{background:var(--beni);color:#fff}
 .cd{margin-top:auto;padding-top:28px}
 .cd p{display:flex;justify-content:space-between;font-size:13px;color:var(--dim);margin-bottom:10px}
@@ -225,6 +226,17 @@ a{color:inherit}svg{display:block}
 .lt{background:var(--bg);color:var(--ink)}
 .lt .kicker{color:var(--beni)}
 .sec{padding:140px 0}
+.rep{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rep .rc{border-radius:24px;padding:32px;background:var(--paper);box-shadow:0 0 0 1px var(--line);display:flex;flex-direction:column;gap:12px}
+.rep .rc .m{font:600 13px/1.6 var(--en);color:var(--muted);letter-spacing:.08em}
+.rep .rc h3{font-size:20px;line-height:1.5}
+.rep .rc ul{list-style:none;display:flex;flex-direction:column;gap:6px;font-size:14px}
+.rep .rc li{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:6px}
+.rep .rc li b{color:var(--beni)}
+.rep .rc a{font-size:13px;color:var(--beni);margin-top:auto}
+.rep .empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:48px;border:1px dashed var(--line);border-radius:24px}
+@media(max-width:900px){.rep{grid-template-columns:1fr}}
+
 .sch{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
 .t{border-radius:28px;padding:40px;background:var(--paper);box-shadow:0 0 0 1px var(--line)}
 .t h3{font:900 22px/1.3 var(--jp);margin-bottom:12px;letter-spacing:-.02em}
@@ -420,6 +432,7 @@ a{color:inherit}svg{display:block}
 
 /* タレントカード（B9） */
 .photo{background:#0E0C0F;box-shadow:inset 0 0 0 1px var(--edge);place-items:center}
+.photo .pimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;background:#fff}.photo .pimg~em{z-index:1;color:#C8242F;font-weight:700}
 .photo .sl{position:absolute;left:-20%;right:-20%;top:58%;height:5px;background:var(--beni);transform:rotate(-8deg)}
 .photo b{position:relative;writing-mode:vertical-rl;font:900 34px/1.1 "Zen Old Mincho",serif;color:#fff;letter-spacing:.12em}
 .photo em{color:var(--beni-on-dark);font:700 10px/1 var(--en);letter-spacing:.24em;bottom:12px}
@@ -493,12 +506,19 @@ a{color:inherit}svg{display:block}
     </div>
   </section>
 
+  <section class="lt sec" id="report" aria-labelledby="h-rep" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head rv"><p class="kicker">Report</p><h2 id="h-rep" class="ph">来店レポート。</h2><p class="ph">来店当日の様子と、お店の出玉状況をまとめてご報告します。</p></div>
+      <div class="rep" id="rep"></div>
+    </div>
+  </section>
+
   <section class="profs" id="talent" aria-labelledby="h-prof">
     <div class="wrap">
       <h2 id="h-prof" class="ph2">出演タレント</h2>
       <div class="pgrid">
         <article class="pc" data-until="2026-12-31">
-          <div class="photo" aria-hidden="true"><i class="sl"></i><b>苺ゆい</b><em>CAST 01</em></div>
+          <div class="photo"><img class="pimg" src="yui_chibi_card.jpg" alt="苺ゆい" loading="lazy" width="600" height="800"><em>CAST 01</em></div>
           <div class="pb">
             <h3>苺ゆい</h3>
             <dl>
@@ -538,7 +558,7 @@ a{color:inherit}svg{display:block}
     <div class="wrap">
       <div class="stick">
         <p class="kicker">店舗・企業さまへ</p>
-        <h2 id="h-svc" class="ph">集める人と、<br><em>集まる理由</em>を。</h2>
+        <h2 id="h-svc" class="ph">人を呼び、<br><em>話題を残す。</em></h2>
         <p class="lead ph">演者を手配するだけでも、告知を作るだけでもありません。来店の当日まで、ひとつの窓口で担当します。</p>
         <div class="idx" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
       </div>
@@ -548,7 +568,7 @@ a{color:inherit}svg{display:block}
           <h3 class="ph">その場所に合う人を、選ぶ。</h3>
           <p class="ph">客層と目的から、出演する演者・インフルエンサーをご提案します。手配だけのご依頼も承ります。</p>
           <div class="vis cast-ui" aria-hidden="true">
-            <div class="cu" data-until="2026-12-31"><div class="top"><span class="av">苺</span><div><b>苺ゆい</b><small>@strawberry_yui_</small></div></div><div class="chips"><span class="on">来店</span><span class="on">動画</span></div></div>
+            <div class="cu" data-until="2026-12-31"><div class="top"><span class="av av-img"><img src="yui_chibi.png" alt="" width="40" height="40"></span><div><b>苺ゆい</b><small>@strawberry_yui_</small></div></div><div class="chips"><span class="on">来店</span><span class="on">動画</span></div></div>
             <div class="cu"><div class="top"><span class="av b">ゆ</span><div><b>魁ゆに</b><small>近日デビュー</small></div></div><div class="chips"><span class="on">来店</span><span>NEW</span></div></div>
             <a class="cu cu-open" href="#join" tabindex="-1"><div class="top"><span class="av" style="background:#332E34;color:#fff">＋</span><div><b>次の一人</b><small>募集中</small></div></div><div class="chips"><span>未経験可</span></div></a>
           </div>
@@ -600,7 +620,6 @@ a{color:inherit}svg{display:block}
         <details><summary>演者の手配だけでも頼めますか？</summary><p>はい。キャスティングだけのご依頼も承ります。告知素材や当日の運営は、必要なものだけ選べます。</p></details>
         <details><summary>どのエリアに対応していますか？</summary><p>関東近郊（東京・神奈川・埼玉・千葉・山梨）が中心です。ほかの地域も、まずはご相談ください。</p></details>
         <details><summary>告知素材はいつ届きますか？</summary><p>日程と出演者が決まったあと、来店日より前にお渡しします。</p></details>
-        <details><summary>日程の変更やキャンセルはできますか？</summary><p>決まったあとの変更は、わかった時点で早めにご連絡ください。条件はご依頼時にご案内します。</p></details>
       </div>
     </div>
   </section>
@@ -658,6 +677,12 @@ a{color:inherit}svg{display:block}
 <script>
 /* 掲載期限：data-until="YYYY-MM-DD" を付けた要素は、その日を過ぎると自動で消える（日本時間） */
 (function(){const td=new Intl.DateTimeFormat("sv-SE",{timeZone:"Asia/Tokyo"}).format(new Date());document.querySelectorAll("[data-until]").forEach(e=>{if(td>e.dataset.until)e.remove();});})();
+/* 来店レポート：1件ずつ足すだけ。[日付, 店名, 出演, 一言まとめ, [[項目,値],...], 投稿URL] 新しい順に最大6件表示 */
+const REPORT=[
+];
+(function(){const el=document.getElementById("rep");if(!el)return;const esc=t=>String(t).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const md=d=>`${+d.slice(0,4)}.${+d.slice(5,7)}.${+d.slice(8)}`;const rs=REPORT.slice().sort((a,b)=>a[0]<b[0]?1:-1).slice(0,6);
+el.innerHTML=rs.length?rs.map(r=>`<article class="rc rv"><p class="m">${md(r[0])} ／ ${esc(r[2])}</p><h3>${esc(r[1])}<br>${esc(r[3])}</h3><ul>${(r[4]||[]).map(x=>`<li><span>${esc(x[0])}</span><b>${esc(x[1])}</b></li>`).join("")}</ul>${r[5]?`<a href="${esc(r[5])}" target="_blank" rel="noopener">当日の投稿を見る →</a>`:""}</article>`).join(""):'<p class="empty">来店のあと、当日の様子と出玉状況をここでご報告します。</p>';})();
 /* 来店データ：ここに1行ずつ足すだけ。次回／本日／実績は日本時間で自動判定 */
 const SCHEDULE=[
   ["2026-09-01","楽園蒲田","苺ゆい"],["2026-09-03","キコーナ草加","苺ゆい"],["2026-09-05","チンジャラ会館","苺ゆい"],
@@ -677,20 +702,7 @@ const SCHEDULE=[
   ["2026-10-21","国際センター高田馬場","苺ゆい"],
   ["2026-10-24","キコーナ海老名","苺ゆい"],
   ["2026-10-25","キング世田谷","苺ゆい"],
-  ["2026-10-26","ニューダイヤ塩山","苺ゆい"],
-  ["2026-11-01","楽園蒲田","苺ゆい"],
-  ["2026-11-02","スーパーセブン新中野","苺ゆい"],
-  ["2026-11-03","キコーナ草加","苺ゆい"],
-  ["2026-11-07","キコーナ八柱","苺ゆい"],
-  ["2026-11-11","キング世田谷","苺ゆい"],
-  ["2026-11-13","キコーナ府中","苺ゆい"],
-  ["2026-11-14","チンジャラ会館","苺ゆい"],
-  ["2026-11-15","マルハンメガシティ東大和","苺ゆい"],
-  ["2026-11-17","楽園溝の口","苺ゆい"],
-  ["2026-11-21","国際センター高田馬場","苺ゆい"],
-  ["2026-11-22","スーパースロットサンフラワー+","苺ゆい"],
-  ["2026-11-23","キコーナ海老名","苺ゆい"],
-  ["2026-11-26","ニューダイヤ塩山","苺ゆい"]
+  ["2026-10-26","ニューダイヤ塩山","苺ゆい"]
 ];
 (function(){
   const $=id=>document.getElementById(id);
@@ -706,8 +718,8 @@ const SCHEDULE=[
   [["s-visit",past.length],["s-hall",halls]].forEach(([id,n])=>{$(id).dataset.to=n;});$("k-visit").textContent=past.length;$("k-hall").textContent=halls;
   if($("c-yui"))$("c-yui").textContent=yui+"回";if($("t-yui"))$("t-yui").textContent=`来店実績 ${yui}回`;if($("pf-yui"))$("pf-yui").textContent=`来店取材 ${yui}回・${new Set(past.filter(r=>r[2]==="苺ゆい").map(r=>r[1])).size}店舗`;
   // パネル
-  if(up[0]){$("p-k").textContent=up[0][0]===today?"TODAY":"NEXT";$("p-d").innerHTML=`${md(up[0][0])}<small>（${wd(up[0][0])}）</small>`;$("p-h").textContent=up[0][1];$("p-w").textContent=`出演 ${up[0][2]}`;$("p-av").textContent=up[0][2][0];}
-  else{$("p-k").textContent="OPEN";$("p-d").textContent=`${+today.slice(5,7)}月`;$("p-h").textContent="来店のご相談、受付中";$("p-w").textContent="候補日だけでもどうぞ";$("p-av").textContent="魁";}
+  if(up[0]){$("p-k").textContent=up[0][0]===today?"TODAY":"NEXT";$("p-d").innerHTML=`${md(up[0][0])}<small>（${wd(up[0][0])}）</small>`;$("p-h").textContent=up[0][1];$("p-w").textContent=`出演 ${up[0][2]}`;{const a=$("p-av");if(up[0][2]==="苺ゆい"){a.classList.add("av-img");a.innerHTML='<img src="yui_chibi.png" alt="" width="40" height="40">';}else{a.classList.remove("av-img");a.textContent=up[0][2][0];}}}
+  else{$("p-k").textContent="OPEN";$("p-d").textContent=`${+today.slice(5,7)}月`;$("p-h").textContent="来店のご相談、受付中";$("p-w").textContent="候補日だけでもどうぞ";$("p-av").classList.remove("av-img");$("p-av").textContent="魁";}
   if(up[0]){const dd=Math.round((Date.parse(up[0][0])-Date.parse(today))/864e5);const pr=past[0]?Math.round((Date.parse(up[0][0])-Date.parse(past[0][0]))/864e5):7;const pct=dd===0?100:Math.max(6,Math.round((1-dd/Math.max(pr,dd))*100));$("p-cd").innerHTML=`<p><span>次の来店まで</span><b>${dd===0?"本日":"あと"+dd+"日"}</b></p><div class="tr2"><i style="width:${pct}%"></i></div>`;}
     // これからの来店
   $("up").innerHTML = up.length
