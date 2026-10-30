@@ -249,6 +249,9 @@ a.xl{color:inherit;text-decoration:underline;text-underline-offset:3px;text-deco
 .mon .up li.done{color:var(--muted)}
 .mon .up li.done .h{text-decoration:none}
 .mon .tag.done{background:transparent;color:var(--muted);box-shadow:inset 0 0 0 1px var(--line)}
+#mon-list.sl-l{animation:monL .35s cubic-bezier(.2,.8,.2,1)}#mon-list.sl-r{animation:monR .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes monL{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:none}}@keyframes monR{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:none}}
+.mon{touch-action:pan-y}.mon-sw{display:none;font:600 12px/1 var(--jp);color:var(--muted);text-align:center;margin-top:12px}@media(hover:none){.mon-sw{display:block}}
 .mon .cnt{font:600 13px/1 var(--jp);color:var(--muted);margin-top:14px;text-align:right}
 @media(max-width:720px){.mon{padding:20px 16px}.mon-hd h3{font-size:22px}.mon-nav{width:42px;height:42px}}
 .sch{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
@@ -516,6 +519,7 @@ a.xl{color:inherit;text-decoration:underline;text-underline-offset:3px;text-deco
       <div class="mon t rv" id="mon">
         <div class="mon-hd"><button type="button" class="mon-nav" id="mon-prev" aria-label="前の月">‹</button><h3 id="mon-t" aria-live="polite"></h3><button type="button" class="mon-nav" id="mon-next" aria-label="次の月">›</button></div>
         <div id="mon-list"></div>
+        <p class="mon-sw" aria-hidden="true">← 左右にスワイプで月を切り替え →</p>
       </div>
     </div>
   </section>
@@ -760,8 +764,12 @@ const SCHEDULE=[
      $("mon-list").innerHTML=list.length?'<ul class="up">'+list.map(r=>{const done=r[0]<today;const tag=r[0]===today?'<span class="tag">本日</span>':(r[0]===nextUp?'<span class="tag">次回</span>':(done?'<span class="tag done">終了</span>':''));return `<li class="${done?"done":""}"><span class="d">${md(r[0])}<small>（${wd(r[0])}）</small></span><span class="h">${esc(r[1])}${tag}</span><span class="w">${esc(r[2])}</span></li>`}).join("")+`</ul><p class="cnt">${+m}月は${list.length}件</p>`
        :`<div class="empty"><b>${+m}月の日程は、決まり次第ここに載せます。</b><a class="btn" href="#contact">候補日を相談する</a></div>`;
      $("mon-prev").disabled=view<=min;$("mon-next").disabled=view>=max;};
-   $("mon-prev").addEventListener("click",()=>{if(view>min){view=addM(view,-1);draw();}});
-   $("mon-next").addEventListener("click",()=>{if(view<max){view=addM(view,1);draw();}});
+   const go=n=>{const t=addM(view,n);if(t<min||t>max)return;view=t;draw();const L=$("mon-list");L.classList.remove("sl-l","sl-r");void L.offsetWidth;L.classList.add(n>0?"sl-l":"sl-r");};
+   $("mon-prev").addEventListener("click",()=>go(-1));
+   $("mon-next").addEventListener("click",()=>go(1));
+   {const box=$("mon");let x0=null,y0=null;
+    box.addEventListener("touchstart",e=>{x0=e.touches[0].clientX;y0=e.touches[0].clientY;},{passive:true});
+    box.addEventListener("touchend",e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;x0=null;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.5)go(dx<0?1:-1);},{passive:true});}
    draw();}
   // 今月のカレンダー
   const y=+today.slice(0,4),m=+today.slice(5,7);$("cal-t").textContent=`${m}月の来店`;
