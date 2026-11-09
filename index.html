@@ -113,6 +113,7 @@ a.xl{color:inherit;text-decoration:underline;text-underline-offset:3px;text-deco
 .kpi b small{font:700 15px/1 var(--jp);margin-left:4px;letter-spacing:0;color:var(--dim)}
 .kpi>span{display:block;margin-top:8px;font-size:13px;color:var(--dim)}
 .card h4{font:600 12px/1 var(--en);letter-spacing:.14em;color:var(--dim);margin-bottom:14px;text-transform:uppercase}
+.cal-hd{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}.cal-hd h4{margin:0}.cal-nav{width:28px;height:28px;border-radius:50%;border:1px solid rgba(255,255,255,.18);background:transparent;color:#fff;font:400 16px/1 var(--en);cursor:pointer;display:grid;place-items:center;transition:background .2s}.cal-nav:hover:not(:disabled){background:var(--beni);border-color:var(--beni)}.cal-nav:disabled{opacity:.2;cursor:default}.card.cal{touch-action:pan-y}#heat.sl-l{animation:monL .35s cubic-bezier(.2,.8,.2,1)}#heat.sl-r{animation:monR .35s cubic-bezier(.2,.8,.2,1)}
 .heat-hd{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;font:600 11px/1 var(--jp);color:#7D757A;text-align:center;margin-bottom:8px}
 .heat{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
 .heat i{aspect-ratio:1;border-radius:5px;background:#2A262B;display:block}
@@ -500,7 +501,7 @@ a.xl{color:inherit;text-decoration:underline;text-underline-offset:3px;text-deco
             </div>
             <div class="mini" aria-hidden="true">
               <div class="card kpis"><div class="kpi"><b class="num"><span id="k-visit">–</span><small>回</small></b><span>来店取材の実績</span></div><div class="kpi"><b class="num"><span id="k-hall">–</span><small>店舗</small></b><span>出演したお店</span></div></div>
-              <div class="card"><h4 id="cal-t">This month</h4><div class="heat-hd" aria-hidden="true"><span>日</span><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span>土</span></div><div class="heat" id="heat"></div><div class="legend" aria-hidden="true"><span><i></i>来店済み</span><span><i class="u"></i>予定</span></div></div>
+              <div class="card cal" id="cal"><div class="cal-hd"><button type="button" class="cal-nav" id="cal-prev" aria-label="前の月">‹</button><h4 id="cal-t">This month</h4><button type="button" class="cal-nav" id="cal-next" aria-label="次の月">›</button></div><div class="heat-hd" aria-hidden="true"><span>日</span><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span>土</span></div><div class="heat" id="heat"></div><div class="legend" aria-hidden="true"><span><i></i>来店済み</span><span><i class="u"></i>予定</span></div></div>
             </div>
           </div>
         </div>
@@ -743,7 +744,7 @@ const SCHEDULE=[
   ["2026-11-21","国際センター高田馬場","苺ゆい"],
   ["2026-11-22","スーパースロットサンフラワー+","苺ゆい"],
   ["2026-11-23","キコーナ海老名","苺ゆい"],
-  ["2026-11-26","ニューダイヤ塩山","苺ゆい"]
+  ["2026-11-26","ニューダイヤ塩山","苺ゆい"],["2026-12-01","楽園蒲田","苺ゆい"],["2026-12-03","キコーナ草加","苺ゆい"],["2026-12-06","キング世田谷","苺ゆい"],["2026-12-07","スーパーセブン新中野","苺ゆい"],["2026-12-11","キコーナ八柱","苺ゆい"],["2026-12-13","キコーナ府中","苺ゆい"],["2026-12-15","マルハンメガシティ東大和","苺ゆい"],["2026-12-17","楽園溝の口","苺ゆい"],["2026-12-20","キング世田谷","苺ゆい"],["2026-12-21","国際センター高田馬場","苺ゆい"],["2026-12-22","キコーナ八柱","苺ゆい"],["2026-12-23","キコーナ草加","苺ゆい"],["2026-12-26","ニューダイヤ塩山","苺ゆい"],["2026-12-28","キング世田谷","苺ゆい"],["2026-12-30","キコーナ海老名","苺ゆい"],["2026-12-31","スーパースロットサンフラワー+","苺ゆい"]
 ];
 (function(){
   const $=id=>document.getElementById(id);
@@ -779,12 +780,20 @@ const SCHEDULE=[
     box.addEventListener("touchstart",e=>{x0=e.touches[0].clientX;y0=e.touches[0].clientY;},{passive:true});
     box.addEventListener("touchend",e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;x0=null;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.5)go(dx<0?1:-1);},{passive:true});}
    draw();}
-  // 今月のカレンダー
-  const y=+today.slice(0,4),m=+today.slice(5,7);$("cal-t").textContent=`${m}月の来店`;
-  const first=new Date(Date.UTC(y,m-1,1)).getUTCDay(),days=new Date(Date.UTC(y,m,0)).getUTCDate();
-  const set=new Set(rows.map(r=>r[0]));let h="";for(let i=0;i<first;i++)h+='<i style="visibility:hidden"></i>';
-  for(let d=1;d<=days;d++){const k=`${y}-${String(m).padStart(2,"0")}-${String(d).padStart(2,"0")}`;const c=set.has(k)?(k<today?"on":"up"):"";h+=`<i class="${c}${k===today?" td":""}" title="${m}/${d}"></i>`;}
-  $("heat").innerHTML=h;
+  // ミニカレンダー（‹ › とスワイプで月を切り替え）
+  {const set=new Set(rows.map(r=>r[0]));const cur=today.slice(0,7);
+   const mk=(k,n)=>{let y=+k.slice(0,4),m=+k.slice(5,7)+n;while(m>12){m-=12;y++}while(m<1){m+=12;y--}return `${y}-${String(m).padStart(2,"0")}`};
+   const ms=rows.map(r=>r[0].slice(0,7));const cmin=ms.length&&ms[0]<cur?ms[0]:cur;let cmax=mk(cur,1);if(ms.length&&ms[ms.length-1]>cmax)cmax=ms[ms.length-1];
+   let cv=cur;
+   const dc=()=>{const y=+cv.slice(0,4),m=+cv.slice(5,7);$("cal-t").textContent=`${m}月の来店`;
+     const first=new Date(Date.UTC(y,m-1,1)).getUTCDay(),days=new Date(Date.UTC(y,m,0)).getUTCDate();let h="";for(let i=0;i<first;i++)h+='<i style="visibility:hidden"></i>';
+     for(let d=1;d<=days;d++){const k=`${y}-${String(m).padStart(2,"0")}-${String(d).padStart(2,"0")}`;const c=set.has(k)?(k<today?"on":"up"):"";h+=`<i class="${c}${k===today?" td":""}" title="${m}/${d}"></i>`;}
+     $("heat").innerHTML=h;$("cal-prev").disabled=cv<=cmin;$("cal-next").disabled=cv>=cmax;};
+   const cg=n=>{const t=mk(cv,n);if(t<cmin||t>cmax)return;cv=t;dc();const H=$("heat");H.classList.remove("sl-l","sl-r");void H.offsetWidth;H.classList.add(n>0?"sl-l":"sl-r");};
+   $("cal-prev").addEventListener("click",e=>{e.stopPropagation();cg(-1);});$("cal-next").addEventListener("click",e=>{e.stopPropagation();cg(1);});
+   {const box=$("cal");let x0=null,y0=null;box.addEventListener("touchstart",e=>{x0=e.touches[0].clientX;y0=e.touches[0].clientY;},{passive:true});
+    box.addEventListener("touchend",e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;x0=null;if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)*1.5)cg(dx<0?1:-1);},{passive:true});}
+   dc();}
 })();
 
 
