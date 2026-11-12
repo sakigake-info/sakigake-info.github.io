@@ -729,14 +729,14 @@ const TODAY=(()=>{const q=new URLSearchParams(location.search).get("d");return /
 (function(){const td=TODAY;document.querySelectorAll("[data-until]").forEach(e=>{if(td>e.dataset.until)e.remove();});
 /* 活動終了：data-ended="YYYY-MM-DD" を過ぎると、消さずに×と「活動終了」を表示 */
 document.querySelectorAll("[data-ended]").forEach(e=>{if(td>e.dataset.ended){e.classList.add("ended");const m=e.querySelector(".photo em");if(m)m.textContent="〜2026.12";}});})();
-/* お知らせ：1行ずつ足すだけ。[表示する日, 種類, タイトル, 本文(なくてOK)] 表示する日になると自動で出る・新しい順 */
+/* お知らせ：1行ずつ足すだけ。[表示する日, 種類, タイトル, 本文(なくてOK), リンク(なくてOK)] 表示する日になると自動で出る・新しい順 */
 const INFO=[
   ["2026-11-30","タレント","新タレント「魁ゆに」活動開始のお知らせ","静岡県出身の新タレント・魁ゆにが、魁所属として活動を開始します。"],
-  ["2027-01-01","タレント","苺ゆい 活動終了のお知らせ","苺ゆいは2026年12月をもって魁での活動を終了しました。これまでの来店実績は引き続き掲載しています。"],
+  ["2026-11-08","タレント","苺ゆい 来店活動終了のお知らせ","苺ゆいは2026年12月31日をもちまして、来店活動を終了いたします。最終日までの来店予定は、下の来店スケジュールをご覧ください。これまでの来店実績は引き続き掲載いたします。","https://x.com/strawberry_yui_/status/2119386299836797073"],
 ];
 (function(){const el=document.getElementById("info");if(!el)return;const esc=t=>String(t).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const md=d=>`${d.slice(0,4)}.${d.slice(5,7)}.${d.slice(8)}`;const rs=INFO.filter(r=>r[0]<=TODAY).sort((a,b)=>a[0]<b[0]?1:-1).slice(0,8);
-el.innerHTML=rs.length?rs.map(r=>`<li><time datetime="${r[0]}">${md(r[0])}</time><span class="tg${r[1]==="お知らせ"?" g":""}">${esc(r[1])}</span><b>${esc(r[2])}</b>${r[3]?`<p>${esc(r[3])}</p>`:""}</li>`).join(""):'<li><span class="empty">お知らせはまだありません。</span></li>';})();
+el.innerHTML=rs.length?rs.map(r=>`<li><time datetime="${r[0]}">${md(r[0])}</time><span class="tg${r[1]==="お知らせ"?" g":""}">${esc(r[1])}</span><b>${esc(r[2])}</b>${r[3]||r[4]?`<p>${r[3]?esc(r[3]):""}${r[4]?` <a href="${esc(r[4])}" target="_blank" rel="noopener" style="color:var(--beni)">本人の投稿を見る →</a>`:""}</p>`:""}</li>`).join(""):'<li><span class="empty">お知らせはまだありません。</span></li>';})();
 /* 来店レポート：1件ずつ足すだけ。[日付, 店名, 出演, 一言まとめ, [[項目,値],...], 投稿URL] 新しい順に最大6件表示 */
 const REPORT=[
 ];
