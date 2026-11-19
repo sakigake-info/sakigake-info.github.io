@@ -923,5 +923,33 @@ const SCHEDULE=[
 })();
 
 </script>
-<script>/* なめらかスクロールは、本人が操作してから有効にする（リロード時に上から勝手に流れないように） */(function(){var on=function(){document.documentElement.classList.add("sm");["pointerdown","keydown","wheel","touchstart"].forEach(function(e){removeEventListener(e,on,true)})};["pointerdown","keydown","wheel","touchstart"].forEach(function(e){addEventListener(e,on,{capture:true,passive:true})})})();</script></body>
+<script>/* なめらかスクロールは、本人が操作してから有効にする（リロード時に上から勝手に流れないように） */(function(){var on=function(){document.documentElement.classList.add("sm");["pointerdown","keydown","wheel","touchstart"].forEach(function(e){removeEventListener(e,on,true)})};["pointerdown","keydown","wheel","touchstart"].forEach(function(e){addEventListener(e,on,{capture:true,passive:true})})})();</script><style>
+.marquee .tr{will-change:transform}
+.btn:active{transform:scale(.97)}
+[data-focus].fx>*{opacity:.3;transition:opacity .5s ease,transform .5s ease}[data-focus].fx>*.on{opacity:1}
+
+#information,.profs,.join,#contact,.ft{position:relative;border-radius:28px 28px 0 0;margin-top:-28px;z-index:1}
+.hero{padding-bottom:calc(var(--hpb,0px) + 28px)}
+/* スケジュール：終わった来店はたたむ */
+#mon-list:not(.all) li.done{display:none}
+.donebtn{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin:4px 0 10px;padding:0 16px;border-radius:999px;border:0;background:transparent;box-shadow:inset 0 0 0 1px var(--line,#DDD);font:700 13px/1 var(--jp);color:inherit;cursor:pointer}
+.donebtn[hidden]{display:none}
+</style><script>
+(function(){
+  var reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+  /* 帯の文字：スクロールの速さに合わせて流れが速くなり、少し傾く */
+  var tr=document.querySelectorAll(".marquee .tr");var last=scrollY,v=0,raf=0;
+  function tick(){v*=.9;var a=Math.min(7,Math.abs(v)*.035);tr.forEach(function(t){var an=t.getAnimations&&t.getAnimations()[0];if(an)an.playbackRate=1+a;t.parentNode.style.setProperty("--sk",(Math.max(-6,Math.min(6,v*.04)))+"deg");});
+    document.documentElement.style.setProperty("--sy",scrollY);if(Math.abs(v)>.2)raf=requestAnimationFrame(tick);else{raf=0;}}
+  if(!reduce)addEventListener("scroll",function(){v=scrollY-last;last=scrollY;if(!raf)raf=requestAnimationFrame(tick);},{passive:true});
+  /* 画面の真ん中に来た行だけをはっきり見せる */
+  var rows=document.querySelectorAll("[data-focus]>*");
+  if(rows.length&&"IntersectionObserver" in window&&!reduce){document.querySelectorAll("[data-focus]").forEach(function(e){e.classList.add("fx")});
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle("on",e.isIntersecting)})},{rootMargin:"-32% 0px -32% 0px"});rows.forEach(function(r){io.observe(r)});}
+})();
+
+(function(){var ml=document.getElementById("mon-list");if(!ml)return;var b=document.createElement("button");b.type="button";b.className="donebtn";ml.parentNode.insertBefore(b,ml);
+  function up(){var n=ml.querySelectorAll("li.done").length;b.hidden=!n;b.textContent=ml.classList.contains("all")?"終了した来店をたたむ":"終了した来店も見る（"+n+"件）";}
+  b.addEventListener("click",function(){ml.classList.toggle("all");up();});new MutationObserver(up).observe(ml,{childList:true});up();})();
+</script></body>
 </html>
