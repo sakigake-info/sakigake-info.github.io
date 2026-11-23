@@ -733,7 +733,7 @@ const TODAY=(()=>{const q=new URLSearchParams(location.search).get("d");return /
 document.querySelectorAll("[data-ended]").forEach(e=>{if(td>e.dataset.ended){e.classList.add("ended");const m=e.querySelector(".photo em");if(m)m.textContent="〜2026.12";}});})();
 /* お知らせ：1行ずつ足すだけ。[表示する日, 種類, タイトル, 本文(なくてOK), リンク(なくてOK)] 表示する日になると自動で出る・新しい順 */
 const INFO=[
-  ["2026-11-30","タレント","新タレント「魁ゆに」活動開始のお知らせ","静岡県出身の新タレント・魁ゆにが、魁所属として活動を開始します。"],
+  ["2026-11-25","タレント","新タレント「魁ゆに」活動開始のお知らせ","静岡県出身の新タレント・魁ゆにが、魁所属として活動を開始します。"],
   ["2026-11-08","タレント","苺ゆい 来店活動終了のお知らせ","苺ゆいは2026年12月31日をもちまして、来店活動を終了いたします。最終日までの来店予定は、下の来店スケジュールをご覧ください。これまでの来店実績は引き続き掲載いたします。","https://x.com/strawberry_yui_/status/2119386299836797073"],
 ];
 (function(){const el=document.getElementById("info");if(!el)return;const esc=t=>String(t).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
